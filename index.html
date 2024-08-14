@@ -30,10 +30,20 @@
             <button id="start-game">Let's Go!</button>
             <button id="about-game">About the Game</button>
         </div>
+        <!--Popup window for "About the Game window"-->
+        <div id="about-game-popup" class="popup">
+            <div class="popup-content">
+                <h2>About the Game</h2>
+                <button id="instructions"><i class="fa-solid fa-info"></i>Instructions</button>
+                <button id="rules"><i class="fa-solid fa-scale-balanced"></i>Game Rules</button>
+                <button id="close-about-game">Close</button>
+            </div>
+        </div>
 
-        <div class="container" id="game-instructions">
-            <div class="main-game">
-                <h3><i class="fa-solid fa-info"></i>Instructions</h3>
+        <!--Popup window for Instructions-->
+        <div id="instructions-popup" class="popup">
+            <div class="popup-content">
+                <h2><i class="fa-solid fa-info"></i>Instructions</h2>
                 <div id="instructions-container">
                     <ol>
                         <li>Click "Let's Go!" to begin. For more details, click "About the Game".</li>
@@ -50,9 +60,10 @@
             </div>
         </div>
 
-        <div class="container" id="game-rules">
-            <div class="main-game">
-                <h3>Game Rules</h3>
+        <!--Popup window for Game Rules-->
+        <div id="game-rules-popup" class="popup">
+            <div class="popup-content">
+                <h2><i class="fa-solid fa-scale-balanced"></i>Game Rules</h2>
                 <div id="rules-container">
                     <ol>
                         <li>You must complete all questions within 1 hour</li>
