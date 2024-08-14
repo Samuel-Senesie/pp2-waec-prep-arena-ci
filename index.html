@@ -57,6 +57,7 @@
                         <li>Monitor the timer on the right side of the screen to manage your time.</li>
                     </ol>
                 </div>
+                <button id="back-to-about-game"><i class="fa-solid fa-circle-caret-left"></i>Back</button>
             </div>
         </div>
 
@@ -76,14 +77,24 @@
                         <li>At the end of the playtime, scores and correct answeres will be displayed</li>
                     </ol>
                 </div>
+                <button id="back-to-about-game"><i class="fa-solid fa-circle-caret-left"></i>Back</button>
             </div>
         </div>
 
-        <div id="level-selection">
-            <h2>Select Your Level</h2>
-            <button class="level-btn" data-level="jss">JSS</button>
-            <button class="level-btn" data-level="sss">SSS</button>
+        <div id="game" style="display: none;">
+            <button id="pause-game">Pause</button>
+            <button id="resume-game" style="display: none;">Resume</button>
+            <div id="game-container">
+                <h1>Test Your Knowledge</h1>
+                <div id="level-selection">
+                    <h2>Select Your Level</h2>
+                    <button class="level-btn" data-level="jss">JSS</button>
+                    <button class="level-btn" data-level="sss">SSS</button>
+                </div>
+            </div>
         </div>
+
+        
 
         <!--Subject buttons will added dynamically-->
         <div id="subject-selection" class="hidden">
