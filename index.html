@@ -97,13 +97,15 @@
                 <div id="subject-selection" style="display: none;">
                     <button class="subject-btn" data-level="maths"><i
                             class="fa-solid fa-calculator-simple"></i>Maths</button>
-                            <button class="subject-btn" data-level="english"><i class="fa-solid fa-e"></i>English</button>
+                    <button class="subject-btn" data-level="english"><i class="fa-solid fa-e"></i>English</button>
                     <button class="subject-btn" data-level="integrated-science"><i class="fa-solid fa-atom"></i>Integrated Science</button>
                     <button class="subject-btn" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i>Social Studies</button>
+                    <button class="subject-btn" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
+                    <button class="subject-btn" data-level="government"><i class="fa-solid fa-landmark"></i>Government</button>
                 </div>
 
                 <!--Year Selection dropdown list-->
-                <div id="year-selection">
+                <div id="year-selection" style="display: none;">
                     <h2>Select Year</h2>
                     <div>
                         <select name="year" id="year" aria-label="Select Year">
@@ -115,25 +117,27 @@
                         </select>
                     </div>
                 </div>
+
+                <!--Questions display Area-->
+                <div id="question-container" style="display: none;">
+                    <p id="question"></p>
+                    <div id="options-container"></div>
+                    <button id="next-question">Next</button>
+                    <div id="timer"></div>
+                </div>
+
+                <!--Results display-->
+                <div id="results" style="display: none;">
+                    <p id="scores"></p>
+                    <button id="restart">Retry</button>
+                </div>
             </div>
-        </div>
-
-
-
-        <!--Subject buttons will added dynamically-->
-        <div id="subject-selection" class="hidden">
-            <h2>Select Subject</h2>
-        </div>
-
-        <!--Year buttons will added dynamically-->
-        <div id="year-selection" class="hidden">
-            <h2>Select Year</h2>
         </div>
     </div>
 
     <!--Fontawesome kit-->
+    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/d021a7a29d.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
