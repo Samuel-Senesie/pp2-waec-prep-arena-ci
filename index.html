@@ -86,15 +86,39 @@
             <button id="resume-game" style="display: none;">Resume</button>
             <div id="game-container">
                 <h1>Test Your Knowledge</h1>
+                <!--Level selection buttons-->
                 <div id="level-selection">
                     <h2>Select Your Level</h2>
                     <button class="level-btn" data-level="jss">JSS</button>
                     <button class="level-btn" data-level="sss">SSS</button>
                 </div>
+
+                <!--Subject selection buttons-->
+                <div id="subject-selection" style="display: none;">
+                    <button class="subject-btn" data-level="maths"><i
+                            class="fa-solid fa-calculator-simple"></i>Maths</button>
+                            <button class="subject-btn" data-level="english"><i class="fa-solid fa-e"></i>English</button>
+                    <button class="subject-btn" data-level="integrated-science"><i class="fa-solid fa-atom"></i>Integrated Science</button>
+                    <button class="subject-btn" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i>Social Studies</button>
+                </div>
+
+                <!--Year Selection dropdown list-->
+                <div id="year-selection">
+                    <h2>Select Year</h2>
+                    <div>
+                        <select name="year" id="year" aria-label="Select Year">
+                            <option value=" " disabled selected>Select Year</option>
+                            <option value="YR">2022</option>
+                            <option value="#">2021</option>
+                            <option value="#">2020</option>
+                            <option value="#">2019</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
 
-        
+
 
         <!--Subject buttons will added dynamically-->
         <div id="subject-selection" class="hidden">
