@@ -30,6 +30,59 @@
             <button id="start-game">Let's Go!</button>
             <button id="about-game">About the Game</button>
         </div>
+
+        <div class="container" id="game-instructions">
+            <div class="main-game">
+                <h3>Instructions</h3>
+                <div id="instructions-container">
+                    <ol>
+                        <li>Click "Let's Go!" to begin. For more details, click "About the Game".</li>
+                        <li>Choose your level: JSS or SSS.</li>
+                        <li>Pick your subject and year for past exam questions.</li>
+                        <li>Answer 60 multipl-choice questions per round within 60 seconds each.</li>
+                        <li>You can skip questions and return to them later within the 1-hour playtime.</li>
+                        <li>Unanswered questions will appear at the end of the round if time allows.</li>
+                        <li>If you don't answer the question in 60 seconds, the game moves to the next question.</li>
+                        <li>Final scores and correct answers will be displayed at the end.</li>
+                        <li>Monitor the timer on the right side of the screen to manage your time.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="game-rules">
+            <div class="main-game">
+                <h3>Game Rules</h3>
+                <div id="rules-container">
+                    <ol>
+                        <li>You must complete all questions within 1 hour</li>
+                        <li>You can only submit one answer per question</li>
+                        <li>You may skip questions and return to them within the 1-hour playtime</li>
+                        <li>Any unanswered questions will be presented as the end of the round is there is remaining
+                            time</li>
+                        <li>Each question must be answered within 60 seconds. If time runs out, the game will proceed to
+                            the next question</li>
+                        <li>At the end of the playtime, scores and correct answeres will be displayed</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div id="level-selection">
+            <h2>Select Your Level</h2>
+            <button class="level-btn" data-level="jss">JSS</button>
+            <button class="level-btn" data-level="sss">SSS</button>
+        </div>
+
+        <!--Subject buttons will added dynamically-->
+        <div id="subject-selection" class="hidden">
+            <h2>Select Subject</h2>
+        </div>
+
+        <!--Year buttons will added dynamically-->
+        <div id="year-selection" class="hidden">
+            <h2>Select Year</h2>
+        </div>
     </div>
 
 </body>
