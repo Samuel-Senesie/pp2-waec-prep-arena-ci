@@ -21,22 +21,26 @@
 </head>
 
 <body>
-    <h1 class="heading">
-        <!--<img class="logo" src="assets/images/logo.png" alt="logo">--> WAEC Prep Arena
-    </h1>
-    <div class="game-area">
+    <!--This div is the main container for the homepage , including the popup windows for the game rules and instructions-->
+    <div id="home-page">
+        <h1 class="heading">
+            <!--<img class="logo" src="assets/images/logo.png" alt="logo">--> WAEC Prep Arena
+        </h1>
         <h2>Welcome to WAEC Prep Arena</h2>
-        <div class="contols-area">
-            <button id="start-game">Let's Go!</button>
-            <button id="about-the-game" onclick="showAboutGameContainer(true)">About the Game</button>
-        </div>
-        <!--Popup window for "About the Game window"-->
-        <div id="about-game-container" class="popup">
-            <div class="popup-content">
-                <h2>About the Game</h2>
-                <button id="instructions"><i class="fa-solid fa-info"></i>Instructions</button>
-                <button id="rules"><i class="fa-solid fa-scale-balanced"></i>Game Rules</button>
-                <button id="close-about-game">Close</button>
+        <div class="start">
+            <div class="start-game">
+                <button id="start-game">Let's Go!</button>
+                <button id="about-the-game" onclick="showAboutPopup(truth)">About the Game</button>
+            </div>
+            <!--Popup window for "About the Game window"-->
+            <div id="about-popup" class="popup">
+                <div id="about-game" class="popup-content">
+                    <h2>About the Game</h2>
+                    <button id="instructions"><i class="fa-solid fa-info"
+                            onclick="openInstructionsPopup()"></i>Instructions</button>
+                    <button id="rules"><i class="fa-solid fa-scale-balanced"></i>Game Rules</button>
+                    <button id="close-about-game">Close</button>
+                </div>
             </div>
         </div>
 
@@ -80,57 +84,61 @@
                 <button id="back-to-about-game"><i class="fa-solid fa-circle-caret-left"></i>Back</button>
             </div>
         </div>
+    </div>
 
-        <div id="game" style="display: none;">
-            <button id="pause-game">Pause</button>
-            <button id="resume-game" style="display: none;">Resume</button>
-            <div id="game-container">
-                <h1>Test Your Knowledge</h1>
-                <!--Level selection buttons-->
-                <div id="level-selection">
-                    <h2>Select Your Level</h2>
-                    <button class="level-btn" data-level="jss">JSS</button>
-                    <button class="level-btn" data-level="sss">SSS</button>
-                </div>
+    <!--Div for the area where the game is played-->
+    <div id="game" style="display: none;">
+        <button id="pause-game">Pause</button>
+        <button id="resume-game" style="display: none;">Resume</button>
+        <div id="game-container">
+            <h1>Test Your Knowledge</h1>
+            <!--Level selection buttons-->
+            <div id="level-selection">
+                <h2>Select Your Level</h2>
+                <button class="level-btn" data-level="jss">JSS</button>
+                <button class="level-btn" data-level="sss">SSS</button>
+            </div>
 
-                <!--Subject selection buttons-->
-                <div id="subject-selection" style="display: none;">
-                    <button class="subject-btn" data-level="maths"><i
-                            class="fa-solid fa-calculator-simple"></i>Maths</button>
-                    <button class="subject-btn" data-level="english"><i class="fa-solid fa-e"></i>English</button>
-                    <button class="subject-btn" data-level="integrated-science"><i class="fa-solid fa-atom"></i>Integrated Science</button>
-                    <button class="subject-btn" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i>Social Studies</button>
-                    <button class="subject-btn" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
-                    <button class="subject-btn" data-level="government"><i class="fa-solid fa-landmark"></i>Government</button>
-                </div>
+            <!--Subject selection buttons-->
+            <div id="subject-selection" style="display: none;">
+                <button class="subject-btn" data-level="maths"><i
+                        class="fa-solid fa-calculator-simple"></i>Maths</button>
+                <button class="subject-btn" data-level="english"><i class="fa-solid fa-e"></i>English</button>
+                <button class="subject-btn" data-level="integrated-science"><i class="fa-solid fa-atom"></i>Integrated
+                    Science</button>
+                <button class="subject-btn" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i>Social
+                    Studies</button>
+                <button class="subject-btn" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
+                <button class="subject-btn" data-level="government"><i
+                        class="fa-solid fa-landmark"></i>Government</button>
+            </div>
 
-                <!--Year Selection dropdown list-->
-                <div id="year-selection" style="display: none;">
-                    <h2>Select Year</h2>
-                    <div>
-                        <select name="year" id="year" aria-label="Select Year">
-                            <option value=" " disabled selected>Select Year</option>
-                            <option value="YR">2022</option>
-                            <option value="#">2021</option>
-                            <option value="#">2020</option>
-                            <option value="#">2019</option>
-                        </select>
-                    </div>
+            <!--Year Selection dropdown list-->
+            <div id="year-selection" style="display: none;">
+                <h2>Select Year</h2>
+                <div>
+                    <select name="year" id="year" aria-label="Select Year">
+                        <option value=" " disabled selected>Select Year</option>
+                        <option value="YR">2022</option>
+                        <option value="#">2021</option>
+                        <option value="#">2020</option>
+                        <option value="#">2019</option>
+                    </select>
                 </div>
+            </div>
 
-                <!--Questions display Area-->
-                <div id="question-container" style="display: none;">
-                    <p id="question"></p>
-                    <div id="options-container"></div>
-                    <button id="next-question">Next</button>
-                    <div id="timer"></div>
-                </div>
+            <!--Questions display Area-->
+            <div id="question-container" style="display: none;">
+                <p id="question"></p>
+                <div id="options-container"></div>
+                <button id="next-question">Next</button>
+                <div id="timer"></div>
+            </div>
 
-                <!--Results display-->
-                <div id="results" style="display: none;">
-                    <p id="scores"></p>
-                    <button id="restart">Retry</button>
-                </div>
+            <!--Results display-->
+            <div id="results" style="display: none;">
+                <p id="scores"></p>
+                <button id="restart">Retry</button>
             </div>
         </div>
     </div>
