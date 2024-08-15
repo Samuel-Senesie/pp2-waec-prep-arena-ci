@@ -22,16 +22,16 @@
 
 <body>
     <h1 class="heading">
-        <img class="logo" src="assets/images/logo.png" alt="logo"> WAEC Prep Arena
+        <!--<img class="logo" src="assets/images/logo.png" alt="logo">--> WAEC Prep Arena
     </h1>
     <div class="game-area">
         <h2>Welcome to WAEC Prep Arena</h2>
         <div class="contols-area">
             <button id="start-game">Let's Go!</button>
-            <button id="about-game">About the Game</button>
+            <button id="about-the-game" onclick="showAboutGameContainer(true)">About the Game</button>
         </div>
         <!--Popup window for "About the Game window"-->
-        <div id="about-game-popup" class="popup">
+        <div id="about-game-container" class="popup">
             <div class="popup-content">
                 <h2>About the Game</h2>
                 <button id="instructions"><i class="fa-solid fa-info"></i>Instructions</button>

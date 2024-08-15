@@ -13,7 +13,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: url("../images/home-background.png") no-repeat center center/cover;
+    background: url("../images/home-background-image.png") no-repeat;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -24,8 +25,19 @@ button {
     height: 50px;
     font-family: 'Robot', sans-serif;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 20px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.popup {
+    display: none;
+
+}
+
+/* Popup window for let's go button */
+.popup .popup-content {
+    position: fixed;
+    z-index: 1;
 }
