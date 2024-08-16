@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+#home-page, #game {
+    margin-top: 20px;
+}
+
 h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -35,7 +39,7 @@ h2 {
 }
 
 button {
-    width: 200px;
+    width: 220px;
     height: 50px;
     padding: 10px 10px;
     margin: 5px;
@@ -49,6 +53,12 @@ button {
     cursor: pointer;
     color: black;
     background-color: #66ccff;
+}
+
+i {
+    color: white;
+    font-size: 25px;
+    padding-right: 10px;
 }
 
 #about-game {
@@ -67,11 +77,9 @@ button {
 /*  Popup containers for Instructions and Rules */
 #instructions-popup,
 #game-rules-popup  {
-    display: flex;
+    display: none;
     flex-direction: column;
     /*position: fixed; */
-    width: 85%;
-    height: 80vh;
     border-radius: 40px;
     box-sizing: border-box;
     padding: 20px;
@@ -79,6 +87,17 @@ button {
     text-align: left;
     margin-left: 40px;
     background-color: #007BFF;
+}
+
+#instructions-popup {
+    width: 85%;
+    height: 80vh;
+}
+
+#game-rules-popup {
+    width: 85%;
+    height: 60vh;
+
 }
 
 .popup-content > h2 {
@@ -105,10 +124,17 @@ button {
     bottom: 100px;
 }
 
-/*.popup {
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
     display: none;
 
-} */
+}
 
 /* Popup window for let's go button */
 /*.popup .popup-content {

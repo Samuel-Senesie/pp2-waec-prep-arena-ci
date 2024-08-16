@@ -30,14 +30,13 @@
         <div class="start">
             <div class="start-game">
                 <button id="start-game">Let's Go!</button>
-                <button id="about-the-game" onclick="showAboutPopup(truth)">About the Game</button>
+                <button id="about-the-game" onclick="showAboutPopup(truth)">About Game</button>
             </div>
             <!--Popup window for "About the Game window"-->
             <div id="about-popup" class="popup">
                 <div id="about-game" class="popup-content">
-                    <h2>About the Game</h2>
-                    <button id="instructions"><i class="fa-solid fa-info"
-                            onclick="openInstructionsPopup()"></i>Instructions</button>
+                    <h2>About Game</h2>
+                    <button id="instructions" onclick="openInstructionsPopup()"><i class="fa-solid fa-circle-info"></i>Instructions</button>
                     <button id="rules"><i class="fa-solid fa-scale-balanced"></i>Game Rules</button>
                     <button id="close-about-game">Close</button>
                 </div>
@@ -47,7 +46,7 @@
         <!--Popup window for Instructions-->
         <div id="instructions-popup" class="popup">
             <div class="popup-content">
-                <h2><i class="fa-solid fa-info"></i>Instructions</h2>
+                <h2><i class="fa-solid fa-circle-info"></i>Instructions</h2>
                 <div id="instructions-container">
                     <ol>
                         <li>Click "Let's Go!" to begin. For more details, click "About the Game".</li>
