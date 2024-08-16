@@ -156,6 +156,16 @@ i {
 
 }
 
+#year {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+#year {}
+
 .btn--big {
     width: 100px;
     height: 100px;
