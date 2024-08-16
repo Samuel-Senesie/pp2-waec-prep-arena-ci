@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatiable" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!--Meta tags for search engine optimization-->
     <meta name="description"
         content="Game for puplis in examination classes in Sierra Leone. Educational game. Preparing for an exam. Exam preparation game. WAEC Exam. BECE Exam. WASSCE Exam. Sierra Leone. West Africa">
@@ -60,7 +60,7 @@
                         <li>Monitor the timer on the right side of the screen to manage your time.</li>
                     </ol>
                 </div>
-                <button id="back-to-about-game"><i class="fa-solid fa-circle-caret-left"></i>Back</button>
+                <button id="back-to-about-game"><i class="fa-solid fa-rotate-left"></i>Back</button>
             </div>
         </div>
 
@@ -80,15 +80,15 @@
                         <li>At the end of the playtime, scores and correct answeres will be displayed</li>
                     </ol>
                 </div>
-                <button id="back-to-about-rules"><i class="fa-solid fa-circle-caret-left"></i>Back</button>
+                <button id="back-to-about-rules"><i class="fa-solid fa-rotate-left"></i>Back</button>
             </div>
         </div>
     </div>
 
     <!--Div for the area where the game is played-->
-    <div id="game" style="display: none;">
-        <button id="pause-game">Pause</button>
-        <button id="resume-game" style="display: none;">Resume</button>
+    <div id="game">
+        <button id="pause-game"><i class="fa-solid fa-circle-pause"></i>Pause</button>
+        <button id="resume-game" style="display: none;"><i class="fa-solid fa-play"></i>Resume</button>
         <div id="game-container">
             <h1>Test Your Knowledge</h1>
             <!--Level selection buttons-->
@@ -98,22 +98,25 @@
                 <button class="level-btn" data-level="sss">SSS</button>
             </div>
 
-            <!--Subject selection buttons-->
-            <div id="subject-selection" style="display: none;">
-                <button class="subject-btn" data-level="maths"><i
-                        class="fa-solid fa-calculator-simple"></i>Maths</button>
-                <button class="subject-btn" data-level="english"><i class="fa-solid fa-e"></i>English</button>
-                <button class="subject-btn" data-level="integrated-science"><i class="fa-solid fa-atom"></i>Integrated
-                    Science</button>
-                <button class="subject-btn" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i>Social
-                    Studies</button>
-                <button class="subject-btn" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
-                <button class="subject-btn" data-level="government"><i
+            <!--Subject selection buttons for JSS level-->
+            <div id="subject-selection-jss" style="display: none;">
+                <button class="subject-btn btn--big btn--grey" data-level="mathematics" data-type="mathematics"><i class="fa-solid fa-square-root-variable"></i></button>
+                <button class="subject-btn btn--big" data-level="language-arts"><i class="fa-solid fa-e"></i></button>
+                <button class="subject-btn btn--big" data-level="integrated-science"><i class="fa-solid fa-atom"></i></button>
+                <button class="subject-btn btn--big" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i></button>
+            </div>
+
+            <!--Subject selection for sss-->
+            <div id="subject-selection-sss" style="display: none;">
+                <button class="subject-btn btn--big btn--grey" data-level="maths" data-type="maths"><i class="fa-solid fa-square-root-variable"></i></button>
+                <button class="subject-btn btn--big" data-level="english-language"><i class="fa-solid fa-e"></i></button>
+                <button class="subject-btn btn--big" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
+                <button class="subject-btn btn--big" data-level="government"><i
                         class="fa-solid fa-landmark"></i>Government</button>
             </div>
 
             <!--Year Selection dropdown list-->
-            <div id="year-selection" style="display: none;">
+            <div id="year-selection">
                 <h2>Select Year</h2>
                 <div>
                     <select name="year" id="year" aria-label="Select Year">
