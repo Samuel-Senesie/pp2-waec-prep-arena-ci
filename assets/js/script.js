@@ -43,6 +43,15 @@ document.getElementById('back-to-about-rules').addEventListener('click', () => {
 })
 
 
+//Start Game
+
+document.getElementById('start-game').addEventListener('click', () => {
+    document.getElementById('level-selection').classList.remove('hidden');
+    document.getElementById('start-game').classList.add('hidden');
+    document.getElementById('about-game').classList.add('hidden');
+
+});
+
 
 
 // Make popup window display at the centre of the screen

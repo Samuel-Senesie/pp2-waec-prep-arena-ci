@@ -34,6 +34,7 @@
             </div>
             <!--Popup window for "About the Game window"-->
             <div id="about-popup" class="popup">
+                <div class="overlay"></div>
                 <div id="about-game" class="popup-content">
                     <h2>About Game</h2>
                     <button id="instructions"><i class="fa-solid fa-circle-info"></i>Instructions</button>
@@ -86,7 +87,7 @@
     </div>
 
     <!--Div for the area where the game is played-->
-    <div id="game">
+    <div id="game" style="display: none;">
         <button id="pause-game"><i class="fa-solid fa-circle-pause"></i>Pause</button>
         <button id="resume-game" style="display: none;"><i class="fa-solid fa-play"></i>Resume</button>
         <div id="game-container">
@@ -116,7 +117,7 @@
             </div>
 
             <!--Year Selection dropdown list-->
-            <div id="year-selection">
+            <div id="year-selection" style="display: none;">
                 <h2>Select Year</h2>
                 <div>
                     <select name="year" id="year" aria-label="Select Year">

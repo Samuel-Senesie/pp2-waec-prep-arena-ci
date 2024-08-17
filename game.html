@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--Meta tags for search engine optimization-->
+    <meta name="description"
+        content="Game for puplis in examination classes in Sierra Leone. Educational game. Preparing for an exam. Exam preparation game. WAEC Exam. BECE Exam. WASSCE Exam. Sierra Leone. West Africa">
+    <meta name="keywords"
+        content="preparing for an examination, pupils, exams, WAEC, BECE, WASSCE, Sierra Leone, West Africa">
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>WAEC Prep Arena</title>
+    <!--Stylsheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="game-container">
+         <!--Level selection buttons-->
+        <div id="level-selection">
+            <h2>Select Your Level</h2>
+            <button class="level-btn" data-level="jss">JSS</button>
+            <button class="level-btn" data-level="sss">SSS</button>
+        </div>
+
+        <!--Subject selection buttons for JSS level-->
+        <div id="subject-selection-jss" style="display: none;">
+            <button class="subject-btn btn--big btn--grey" data-level="mathematics" data-type="mathematics"><i class="fa-solid fa-square-root-variable"></i></button>
+            <button class="subject-btn btn--big" data-level="language-arts"><i class="fa-solid fa-e"></i></button>
+            <button class="subject-btn btn--big" data-level="integrated-science"><i class="fa-solid fa-atom"></i></button>
+            <button class="subject-btn btn--big" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i></button>
+        </div>
+
+        <!--Subject selection for sss-->
+        <div id="subject-selection-sss" style="display: none;">
+            <button class="subject-btn btn--big btn--grey" data-level="maths" data-type="maths"><i class="fa-solid fa-square-root-variable"></i></button>
+            <button class="subject-btn btn--big" data-level="english-language"><i class="fa-solid fa-e"></i></button>
+            <button class="subject-btn btn--big" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
+            <button class="subject-btn btn--big" data-level="government"><i
+                    class="fa-solid fa-landmark"></i>Government</button>
+        </div>
+
+        <!--Year Selection dropdown list-->
+        <div id="year-selection" style="display: none;">
+            <h2>Select Year</h2>
+            <div>
+                <select name="year" id="year" data-type="year" aria-label="Select Year">
+                    <option value=" " disabled selected>Select Year</option>
+                    <option value="YR">2022</option>
+                    <option value="#">2021</option>
+                    <option value="#">2020</option>
+                    <option value="#">2019</option>
+                </select>
+            </div>
+        </div>
+
+        <!--Display test questions-->
+        <div id="test-section" style="display: none;">
+            <div id="question-container">
+                <p id="question"></p>
+                <div id="options">
+                    <button class="option-btn">A</button>
+                    <button class="option-btn">B</button>
+                    <button class="option-btn">C</button>
+                    <button class="option-btn">D</button>
+                </div>
+            </div>
+            <div id="timer-bar" aria-label="Timer bar"></div>
+            <div id="test-navigation">
+                <button id="next-question" aria-label="Next question">Next Question</button>
+                <div id="pause" aria-label="Pause button"><i class="fa-solid fa-circle-pause"></i>Pause</div>
+                <div id="resume" aria-label="Resume button"><i class="fa-solid fa-play"></i>Resume</div>
+            </div>
+            <div id="score-board">
+                <p id="correct-score">Correct: 0</p>
+                <p id="wrong-score">Wrong: 0</p>
+                <p id="questions-remaining">Questions Reamaining: 60</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Fontawesome kit-->
+    <script src="https://kit.fontawesome.com/d021a7a29d.js" crossorigin="anonymous"></script>
+
+    <!--Script-->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
