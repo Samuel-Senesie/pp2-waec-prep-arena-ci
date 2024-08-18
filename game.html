@@ -24,40 +24,27 @@
     <div id="game-container">
          <!--Level selection buttons-->
         <div id="level-selection">
-            <h2>Select Your Level</h2>
-            <button class="level-btn" data-level="jss">JSS</button>
-            <button class="level-btn" data-level="sss">SSS</button>
+            <h2>Select Level</h2>
+            <button id="jss-level" class="level-btn" data-level="jss"><i class="fa-solid fa-graduation-cap"></i>JSS</button>
+            <button id="sss-level" class="level-btn" data-level="sss"><i class="fa-solid fa-graduation-cap"></i>SSS</button>
+            <button id="back-to-home-page"><i class="fa-solid fa-rotate-left"></i>Back</button>
         </div>
 
         <!--Subject selection buttons for JSS level-->
         <div id="subject-selection-jss" style="display: none;">
-            <button class="subject-btn btn--big btn--grey" data-level="mathematics" data-type="mathematics"><i class="fa-solid fa-square-root-variable"></i></button>
-            <button class="subject-btn btn--big" data-level="language-arts"><i class="fa-solid fa-e"></i></button>
-            <button class="subject-btn btn--big" data-level="integrated-science"><i class="fa-solid fa-atom"></i></button>
-            <button class="subject-btn btn--big" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i></button>
+            <button class="subject-btn btn--big" data-subject="Mathematics" aria-label="Mathematics Button"><i class="fa-solid fa-square-root-variable"></i></button>
+            <button class="subject-btn btn--big" data-subject="Language Arts" aria-label="Language Arts Button"><i class="fa-solid fa-e"></i></button>
+            <button class="subject-btn btn--big" data-subject="Integrated Science" aria-label="Integrated Science Button"><i class="fa-solid fa-atom"></i></button>
+            <button class="subject-btn btn--big" data-subject="Social Studies" aria-label="Social Studies Button"><i class="fa-solid fa-earth-africa"></i></button>
         </div>
 
         <!--Subject selection for sss-->
         <div id="subject-selection-sss" style="display: none;">
-            <button class="subject-btn btn--big btn--grey" data-level="maths" data-type="maths"><i class="fa-solid fa-square-root-variable"></i></button>
-            <button class="subject-btn btn--big" data-level="english-language"><i class="fa-solid fa-e"></i></button>
-            <button class="subject-btn btn--big" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
-            <button class="subject-btn btn--big" data-level="government"><i
-                    class="fa-solid fa-landmark"></i>Government</button>
-        </div>
-
-        <!--Year Selection dropdown list-->
-        <div id="year-selection" style="display: none;">
-            <h2>Select Year</h2>
-            <div>
-                <select name="year" id="year" data-type="year" aria-label="Select Year">
-                    <option value=" " disabled selected>Select Year</option>
-                    <option value="YR">2022</option>
-                    <option value="#">2021</option>
-                    <option value="#">2020</option>
-                    <option value="#">2019</option>
-                </select>
-            </div>
+            <button class="subject-btn btn--big" data-subject="Maths" aria-label="Maths Button"><i class="fa-solid fa-square-root-variable"></i></button>
+            <button class="subject-btn btn--big" data-subject="English" aria-label="English Button"><i class="fa-solid fa-e"></i></button>
+            <button class="subject-btn btn--big" data-subject="History" aria-label="History Button"><i class="fa-solid fa-book-atlas"></i></button>
+            <button class="subject-btn btn--big" data-subject="Government" aria-label="Government Button"><i
+                    class="fa-solid fa-landmark"></i></button>
         </div>
 
         <!--Display test questions-->

@@ -24,6 +24,7 @@ body {
     margin-top: 1.25rem;
 }
 
+
 h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
@@ -37,6 +38,7 @@ h2 {
     gap: 1.25rem;
     margin-top: 21.9rem;
 }
+
 
 button {
     width: 13.75rem;
@@ -78,7 +80,7 @@ i {
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
-
+#level-selection,
 #about-game {
     width: 18.75rem;
     height: 24.4rem;
@@ -100,6 +102,11 @@ i {
     position: absolute;
     transform: translate(-50%, -50%); /*center the popup on the page */
 }
+
+#level-selection h2{
+    font-size: 2rem;
+}
+
 /*  Popup containers for Instructions and Rules */
 #instructions-popup,
 #game-rules-popup  {
@@ -171,8 +178,8 @@ i {
 
 .popup {
     display: none;
-
 }
+
 
 #year {
     font-family: 'Roboto', sans-serif;

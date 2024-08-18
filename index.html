@@ -29,7 +29,7 @@
         <h2>Welcome to WAEC Prep Arena</h2>
         <div class="start">
             <div class="start-game">
-                <button id="start-game">Let's Go!</button>
+                <button id="start-game" href="game.html">Let's Go!</button>
                 <button id="about-the-game">About Game</button>
             </div>
             <!--Popup window for "About the Game window"-->
@@ -82,66 +82,6 @@
                     </ol>
                 </div>
                 <button id="back-to-about-rules"><i class="fa-solid fa-rotate-left"></i>Back</button>
-            </div>
-        </div>
-    </div>
-
-    <!--Div for the area where the game is played-->
-    <div id="game" style="display: none;">
-        <button id="pause-game"><i class="fa-solid fa-circle-pause"></i>Pause</button>
-        <button id="resume-game" style="display: none;"><i class="fa-solid fa-play"></i>Resume</button>
-        <div id="game-container">
-            <h1>Test Your Knowledge</h1>
-            <!--Level selection buttons-->
-            <div id="level-selection">
-                <h2>Select Your Level</h2>
-                <button class="level-btn" data-level="jss">JSS</button>
-                <button class="level-btn" data-level="sss">SSS</button>
-            </div>
-
-            <!--Subject selection buttons for JSS level-->
-            <div id="subject-selection-jss" style="display: none;">
-                <button class="subject-btn btn--big btn--grey" data-level="mathematics" data-type="mathematics"><i class="fa-solid fa-square-root-variable"></i></button>
-                <button class="subject-btn btn--big" data-level="language-arts"><i class="fa-solid fa-e"></i></button>
-                <button class="subject-btn btn--big" data-level="integrated-science"><i class="fa-solid fa-atom"></i></button>
-                <button class="subject-btn btn--big" data-level="social-studies"><i class="fa-solid fa-earth-africa"></i></button>
-            </div>
-
-            <!--Subject selection for sss-->
-            <div id="subject-selection-sss" style="display: none;">
-                <button class="subject-btn btn--big btn--grey" data-level="maths" data-type="maths"><i class="fa-solid fa-square-root-variable"></i></button>
-                <button class="subject-btn btn--big" data-level="english-language"><i class="fa-solid fa-e"></i></button>
-                <button class="subject-btn btn--big" data-level="history"><i class="fa-solid fa-book-atlas"></i>History</button>
-                <button class="subject-btn btn--big" data-level="government"><i
-                        class="fa-solid fa-landmark"></i>Government</button>
-            </div>
-
-            <!--Year Selection dropdown list-->
-            <div id="year-selection" style="display: none;">
-                <h2>Select Year</h2>
-                <div>
-                    <select name="year" id="year" aria-label="Select Year">
-                        <option value=" " disabled selected>Select Year</option>
-                        <option value="YR">2022</option>
-                        <option value="#">2021</option>
-                        <option value="#">2020</option>
-                        <option value="#">2019</option>
-                    </select>
-                </div>
-            </div>
-
-            <!--Questions display Area-->
-            <div id="question-container" style="display: none;">
-                <p id="question"></p>
-                <div id="options-container"></div>
-                <button id="next-question">Next</button>
-                <div id="timer"></div>
-            </div>
-
-            <!--Results display-->
-            <div id="results" style="display: none;">
-                <p id="scores"></p>
-                <button id="restart">Retry</button>
             </div>
         </div>
     </div>

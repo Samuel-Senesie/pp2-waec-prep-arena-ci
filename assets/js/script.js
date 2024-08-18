@@ -1,12 +1,30 @@
 // Add event listners
-document.addEventListener('DOMContentLoaded', () => {
-    let levelSelection = document.getElementById('level-selection');
+/*document.addEventListener('DOMContentLoaded', () => { */
+    /*let aboutTheGame = document.getElementById('about-the-game'); */
+    /*let levelSelection = document.getElementById('level-selection');
     let subjectSelection = document.getElementById('subject-selection');
     let yearSelection = document.getElementById('year-selection');
     let questionContainer = document.getElementById('question-container');
     let timerBar = document.getElementById('timer-bar');
     let results = document.getElementById('results');
-})
+}) */
+
+/*function showElementById(id) {
+    const element = document.getElementById(id);
+    if(element) element.style.display = 'block';
+}
+
+function hideElementById(id) {
+    const element = document.getElementById(id);
+    if(element) element.style.display = 'none';
+} */
+
+//Start Game
+
+document.getElementById('start-game').addEventListener('click', () =>  {
+    window.location.href = 'game.html';
+
+});
 
 
 // Call popup window for "About Game"
@@ -43,33 +61,45 @@ document.getElementById('back-to-about-rules').addEventListener('click', () => {
 })
 
 
-//Start Game
+// Go back to home page
 
-document.getElementById('start-game').addEventListener('click', () => {
-    document.getElementById('level-selection').classList.remove('hidden');
-    document.getElementById('start-game').classList.add('hidden');
-    document.getElementById('about-game').classList.add('hidden');
-
+document.getElementById('back-to-home-page').addEventListener('click', () => {
+    hideElementById('level-selection');
+    hideElementById('subject-selection-jss');
+    hideElementById('subject-selection-sss');
+    hideElementById('test-selection');
+    showElementById('home-page');
 });
 
 
+document.querySelectorAll('.level-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const level = event.currentTarget.dataset.level;
+        hideElementById('level-selection');
 
-// Make popup window display at the centre of the screen
+        if (level === 'jss') {
+            showElementById ('subject-selection-jss');
+        } else if (level === 'sss') {
+            showElementById('subject-selection-sss');
+        }
 
-function openPopup(url, popupWidth, popHeight) {
-    /*const screenWidth = window.screen.widdth;
-    const screenHeight = window.screen.height;
+    });
+});
 
-    const left = (screen.width / 2) - (popupWidth / 2);
-    const top = (screen.height / 2) - (popHeight / 2); */
+/*document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.endsWith('game.html')) {
+        const backButton = document.getElementById('back-to-home-page');
+        if (backButton) {
+            backButton.addEventListener('click', () => {
+                history.back();
+            });
+        }
+    
+    }
+});*/
 
-    const left = (screen.width - width) / 2;
-    const top = (screen.height - height) / 2;
+//Game Page
 
+/* Main variables for the Game */
 
-    window.open(
-        url,
-        'popupWindow',
-        `width=${width}, height=${height}, top=${top}, left=${left}, scrollbars=yes, resizable=yes`
-    );
-}
+//controls the level selection
