@@ -56,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
             levelSelection.style.display = 'flex';
         }); 
     }
+
+    if (yearSelection) {
+        subjectSelectionJss('click', () => {
+            
+        })
+    }
 });
 
 

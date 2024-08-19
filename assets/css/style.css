@@ -24,9 +24,9 @@ body {
     margin-top: 1.25rem;
 }
 
-#game-container {
+/*#game-container {
     background-color: #007BFF;
-}
+} */
 
 h2 {
     font-family: 'Roboto', sans-serif;
@@ -85,8 +85,8 @@ i {
 }
 #level-selection,
 #about-game {
-    width: 18.75rem;
-    height: 24.4rem;
+    width: 20rem;
+    height: 26rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,24 +190,53 @@ i {
 }
 
 .btn--big {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    /*font-size: 1rem; */
+    padding-top: 0.6rem;
+    border: 10px solid;
+    margin: 0 30px;
+    transition: all 0.5s;
+    gap: 1.5rem;
+}
+
+.btn--big::after{
+    content: attr(data-subject);
     font-size: 1rem;
+    position: relative;
+    left: 1.5em;
+    text-align: center;
 }
 
 .btn--big i{
-    font-size: 50px;
+    font-size: 30px;
     align-items: center;
     justify-content: center;
     color: greenyellow;
 }
 
+
+#subject-selection-sss,
 #subject-selection-jss {
+    width: 70%;
+    height: 70vh;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    gap: 4rem;
+    background-color: #007BFF;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
 }
 
 /*.btn--big::after {
