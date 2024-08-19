@@ -85,8 +85,8 @@ i {
 }
 #level-selection,
 #about-game {
-    width: 20rem;
-    height: 26rem;
+    width: 90%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,7 +100,7 @@ i {
     top: 50%;
     left: 50%;
     /*bottom: 150px;*/
-    gap: 2.2rem;
+    gap: 4.2rem;
     z-index: 999;
     position: absolute;
     transform: translate(-50%, -50%); /*center the popup on the page */
@@ -223,7 +223,7 @@ i {
 #subject-selection-jss {
     width: 85%;
     height: 80vh;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
