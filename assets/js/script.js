@@ -1,13 +1,63 @@
 // Add event listners
-/*document.addEventListener('DOMContentLoaded', () => { */
-    /*let aboutTheGame = document.getElementById('about-the-game'); */
-    /*let levelSelection = document.getElementById('level-selection');
-    let subjectSelection = document.getElementById('subject-selection');
+document.addEventListener('DOMContentLoaded', () => { 
+    let aboutTheGame = document.getElementById('about-the-game');
+    let startGame = document.getElementById('start-game');
+    let closeAboutGame = document.getElementById('close-about-game');
+    let instructions = document.getElementById('instructions');
+    let backToAboutGame = document.getElementById('back-to-about-game');
+    let rules = document.getElementById('rules');
+    let backToAboutRules = document.getElementById('back-to-about-rules');
+    let backToHomePage = document.getElementById('back-to-home-page');
+    let levelSelection = document.getElementById('level-selection');
+    let jssLevel = document.getElementById('jss-level');
+    let sssLevel = document.getElementById('sss-level');
+    let subjectSelectionJss = document.getElementById('subject-selection-jss')
+    let subjectSelectionSss = document.getElementById('subject-selection-sss')
+    /*let subjectSelection = document.getElementById('subject-selection');*/
     let yearSelection = document.getElementById('year-selection');
     let questionContainer = document.getElementById('question-container');
     let timerBar = document.getElementById('timer-bar');
-    let results = document.getElementById('results');
-}) */
+    let results = document.getElementById('results'); 
+
+    // Go back to home page
+
+    if (backToHomePage) {
+        backToHomePage.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    if(jssLevel) {
+        jssLevel.addEventListener('click', () => {
+            levelSelection.style.display ='none';
+            subjectSelectionJss.style.display = 'flex';
+        });
+    }
+
+    if (sssLevel) {
+        sssLevel.addEventListener('click', () => {
+            levelSelection.style.display ='none';
+            subjectSelectionSss.style.display = 'block';
+        });
+    }
+
+
+    /*if (levelSelection) {
+        levelSelection.addEventListener('click', () => {
+            document.querySelectorAll('click', (event) => {
+                const level = event.currentTarget.dataset.level;
+                hideElementById('level-section');
+
+                if(level==='jss') {
+                    showElementById('subject-selection-jss');
+                } else if (level === 'sss') {
+                    showElementById('subject-selection-sss');
+                }
+            })
+        })
+    } */
+
+}); 
 
 /*function showElementById(id) {
     const element = document.getElementById(id);
@@ -19,11 +69,12 @@ function hideElementById(id) {
     if(element) element.style.display = 'none';
 } */
 
+/* window.location.href = 'game.html';*/
+
 //Start Game
 
 document.getElementById('start-game').addEventListener('click', () =>  {
-    window.location.href = 'game.html';
-
+    window.location.href ='game.html';
 });
 
 
@@ -61,14 +112,13 @@ document.getElementById('back-to-about-rules').addEventListener('click', () => {
 })
 
 
-// Go back to home page
+
 
 document.getElementById('back-to-home-page').addEventListener('click', () => {
     hideElementById('level-selection');
     hideElementById('subject-selection-jss');
     hideElementById('subject-selection-sss');
-    hideElementById('test-selection');
-    showElementById('home-page');
+    showElementById('start');
 });
 
 
@@ -84,22 +134,6 @@ document.querySelectorAll('.level-btn').forEach(button => {
         }
 
     });
-});
+}); 
 
-/*document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.endsWith('game.html')) {
-        const backButton = document.getElementById('back-to-home-page');
-        if (backButton) {
-            backButton.addEventListener('click', () => {
-                history.back();
-            });
-        }
-    
-    }
-});*/
 
-//Game Page
-
-/* Main variables for the Game */
-
-//controls the level selection

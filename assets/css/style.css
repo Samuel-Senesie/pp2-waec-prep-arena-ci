@@ -24,6 +24,9 @@ body {
     margin-top: 1.25rem;
 }
 
+#game-container {
+    background-color: #007BFF;
+}
 
 h2 {
     font-family: 'Roboto', sans-serif;
@@ -138,10 +141,6 @@ i {
 
 }
 
-.popup-content {
-
-}
-
 .popup-content > h2 {
     text-transform: uppercase;
     font-size: 2rem;
@@ -189,7 +188,6 @@ i {
     text-align: center;
     border-radius: 5px;
 }
-#year {}
 
 .btn--big {
     width: 100px;
@@ -199,6 +197,9 @@ i {
 
 .btn--big i{
     font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    color: greenyellow;
 }
 /*.btn--big::after {
     content: attr(data-level);

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!--Meta tags for search engine optimization-->
     <meta name="description"
@@ -27,7 +27,7 @@
             <h2>Select Level</h2>
             <button id="jss-level" class="level-btn" data-level="jss"><i class="fa-solid fa-graduation-cap"></i>JSS</button>
             <button id="sss-level" class="level-btn" data-level="sss"><i class="fa-solid fa-graduation-cap"></i>SSS</button>
-            <button id="back-to-home-page"><i class="fa-solid fa-rotate-left"></i>Back</button>
+            <button id="back-to-home-page" href="index.html" ><i class="fa-solid fa-rotate-left"></i>Back</button>
         </div>
 
         <!--Subject selection buttons for JSS level-->
@@ -58,11 +58,11 @@
                     <button class="option-btn">D</button>
                 </div>
             </div>
-            <div id="timer-bar" aria-label="Timer bar"></div>
+            <div id="timer-bar" role="progressbar" aria-label="Time Remaining"></div>
             <div id="test-navigation">
-                <button id="next-question" aria-label="Next question">Next Question</button>
-                <div id="pause" aria-label="Pause button"><i class="fa-solid fa-circle-pause"></i>Pause</div>
-                <div id="resume" aria-label="Resume button"><i class="fa-solid fa-play"></i>Resume</div>
+                <button id="next-question" aria-label="Next Question"><i class="fa-solid fa-forward"></i></button>
+                <div id="pause" role="button" aria-label="Pause"><i class="fa-solid fa-circle-pause"></i>Pause</div>
+                <div id="resume" role="button" aria-label="Resume"><i class="fa-solid fa-play"></i>Resume</div>
             </div>
             <div id="score-board">
                 <p id="correct-score">Correct: 0</p>
