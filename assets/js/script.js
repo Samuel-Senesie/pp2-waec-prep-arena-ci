@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let levelSelection = document.getElementById('level-selection');
     let jssLevel = document.getElementById('jss-level');
     let sssLevel = document.getElementById('sss-level');
-    let subjectSelectionJss = document.getElementById('subject-selection-jss')
-    let subjectSelectionSss = document.getElementById('subject-selection-sss')
+    let subjectSelectionJss = document.getElementById('subject-selection-jss');
+    let subjectSelectionSss = document.getElementById('subject-selection-sss');
+    let backJss = document.getElementById('back-jss');
+    let backSss = document.getElementById('back-sss');
     /*let subjectSelection = document.getElementById('subject-selection');*/
     let yearSelection = document.getElementById('year-selection');
     let questionContainer = document.getElementById('question-container');
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if(jssLevel) {
+    if (jssLevel) {
         jssLevel.addEventListener('click', () => {
             levelSelection.style.display ='none';
             subjectSelectionJss.style.display = 'flex';
@@ -37,27 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sssLevel) {
         sssLevel.addEventListener('click', () => {
             levelSelection.style.display ='none';
-            subjectSelectionSss.style.display = 'block';
+            subjectSelectionSss.style.display = 'flex';
         });
     }
 
+    if (backJss) {
+        backJss.addEventListener('click', () => {
+            subjectSelectionJss.style.display = 'none';
+            levelSelection.style.display = 'flex';
+        });
+    }
 
-    /*if (levelSelection) {
-        levelSelection.addEventListener('click', () => {
-            document.querySelectorAll('click', (event) => {
-                const level = event.currentTarget.dataset.level;
-                hideElementById('level-section');
+    if (backSss) {
+        backSss.addEventListener('click', () => {
+            subjectSelectionSss.style.display = 'none';
+            levelSelection.style.display = 'flex';
+        }); 
+    }
+});
 
-                if(level==='jss') {
-                    showElementById('subject-selection-jss');
-                } else if (level === 'sss') {
-                    showElementById('subject-selection-sss');
-                }
-            })
-        })
-    } */
-
-}); 
 
 /*function showElementById(id) {
     const element = document.getElementById(id);
@@ -112,17 +112,15 @@ document.getElementById('back-to-about-rules').addEventListener('click', () => {
 })
 
 
-
-
-document.getElementById('back-to-home-page').addEventListener('click', () => {
+/*document.getElementById('back-to-home-page').addEventListener('click', () => {
     hideElementById('level-selection');
     hideElementById('subject-selection-jss');
     hideElementById('subject-selection-sss');
     showElementById('start');
-});
+}); */
 
 
-document.querySelectorAll('.level-btn').forEach(button => {
+/*document.querySelectorAll('.level-btn').forEach(button => {
     button.addEventListener('click', (event) => {
         const level = event.currentTarget.dataset.level;
         hideElementById('level-selection');
@@ -134,6 +132,6 @@ document.querySelectorAll('.level-btn').forEach(button => {
         }
 
     });
-}); 
+}); */
 
 
