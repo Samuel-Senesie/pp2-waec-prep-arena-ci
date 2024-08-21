@@ -30,29 +30,45 @@
             <button id="back-to-home-page" href="index.html" ><i class="fa-solid fa-rotate-left"></i>Back</button>
         </div>
 
-        <!--Subject selection buttons for JSS level-->
-        <div id="subject-selection-jss" style="display: none;">
-            <button class="subject-btn btn--big btn--blue" data-subject="Mathematics" aria-label="Mathematics Button"><i class="fa-solid fa-square-root-variable"></i></button>
-            <button class="subject-btn btn--big btn--red" data-subject="Language Arts" aria-label="Language Arts Button"><i class="fa-solid fa-e"></i></button>
-            <button class="subject-btn btn--big" data-subject="Integrated Science" aria-label="Integrated Science Button"><i class="fa-solid fa-atom"></i></button>
-            <button class="subject-btn btn--big" data-subject="Social Studies" aria-label="Social Studies Button"><i class="fa-solid fa-earth-africa"></i></button>
-            <div>
-                <button id="back-jss"><i class="fa-solid fa-rotate-left"></i>Back</button>
+        <!--div for JSS and SSS sujects selection-->
+        <div id="subject-selection">
+            <!--Subject selection buttons for JSS level-->
+            <div id="subject-selection-jss" style="display: none;">
+                <button class="subject-btn btn--big" data-subject="Mathematics" aria-label="Mathematics Button"><i class="fa-solid fa-square-root-variable"></i></button>
+                <button class="subject-btn btn--big" data-subject="Language Arts" aria-label="Language Arts Button"><i class="fa-solid fa-e"></i></button>
+                <button class="subject-btn btn--big" data-subject="Integrated Science" aria-label="Integrated Science Button"><i class="fa-solid fa-atom"></i></button>
+                <button class="subject-btn btn--big" data-subject="Social Studies" aria-label="Social Studies Button"><i class="fa-solid fa-earth-africa"></i></button>
+                <div>
+                    <button id="back-jss"><i class="fa-solid fa-rotate-left"></i>Back</button>
+                </div>
             </div>
-            
+
+            <!--Subject selection for sss-->
+            <div id="subject-selection-sss" style="display: none;">
+                <button class="subject-btn btn--big" data-subject="Maths" aria-label="Maths Button"><i class="fa-solid fa-square-root-variable"></i></button>
+                <button class="subject-btn btn--big" data-subject="English" aria-label="English Button"><i class="fa-solid fa-e"></i></button>
+                <button class="subject-btn btn--big" data-subject="History" aria-label="History Button"><i class="fa-solid fa-book-atlas"></i></button>
+                <button class="subject-btn btn--big" data-subject="Government" aria-label="Government Button"><i
+                        class="fa-solid fa-landmark"></i></button>
+                <div>
+                    <button id="back-sss"><i class="fa-solid fa-rotate-left"></i>Back</button>
+                </div>
+            </div>
         </div>
 
-        <!--Subject selection for sss-->
-        <div id="subject-selection-sss" style="display: none;">
-            <button class="subject-btn btn--big" data-subject="Maths" aria-label="Maths Button"><i class="fa-solid fa-square-root-variable"></i></button>
-            <button class="subject-btn btn--big" data-subject="English" aria-label="English Button"><i class="fa-solid fa-e"></i></button>
-            <button class="subject-btn btn--big" data-subject="History" aria-label="History Button"><i class="fa-solid fa-book-atlas"></i></button>
-            <button class="subject-btn btn--big" data-subject="Government" aria-label="Government Button"><i
-                    class="fa-solid fa-landmark"></i></button>
-            <div>
-                <button id="back-sss"><i class="fa-solid fa-rotate-left"></i>Back</button>
+        <!--Select years past exmination paper-->
+        <div id="year-selection" style="display: none;" aria-label="Select Year">
+            <select name="year" id="year-dropdown">
+                <option value=" " disabled selected>Select Year</option>
+                <option value="2019" data-year="2019">2019</option>
+                <option value="2020" data-year="2020">2020</option>
+                <option value="2021" data-year="2021">2021</option>
+                <option value="2022" data-year="2022">2022</option>
+            </select>
+            <div id="year-btns">
+                <button id="start-test"><i class="fa-solid fa-play"></i>Start Test</button>
+                <button id="back-to-subjects"><i class="fa-solid fa-rotate-left"></i>Back</button>
             </div>
-            
         </div>
 
         <!--Display test questions-->
