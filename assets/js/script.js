@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let yearDropdown = document.getElementById('year-dropdown');
     let questionContainer = document.getElementById('question-container');
     let subjectButton = document.getElementsByClassName('.subject-button')
+    let backToSubjectButton =document.getElementById('back-to-subjects');
     let selectedSubjectText = document.getElementById('selected-subject');
     let startTestButton = document.getElementById('start-test');
     let optionsContainer = document.getElementById('options-container');
@@ -210,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }); */
 
-   
-    
+
+
     /*document.querySelectorAll('.subject-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             let subject = e.currentTarget.getAttribute('data-subject');
@@ -235,18 +236,18 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             subjectSelectionJss.style.display = 'none';
             subjectSelectionSss.style.display = 'none';
-            yearSelection.style.display ='block';
+            yearSelection.style.display = 'block';
         });
     });
 
-    backToSubjects.addEventListener('click', () => {
+    /*backToSubjects.addEventListener('click', () => {
         yearSelection.style.display = 'none';
         if (document.getElementById('subject-selection-jss').style.display === 'none') {
-            subjectSelectionSss.style.display ='flex';
+            subjectSelectionSss.style.display = 'flex';
         } else {
             subjectSelectionJss.style.display = 'flex';
         }
-    });
+    });*/
 
     /*startTestButton.addEventListener('click', () => {
         yearSelection.style.display ='none';
