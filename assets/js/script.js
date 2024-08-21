@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let yearDropdown = document.getElementById('year-dropdown');
     let questionContainer = document.getElementById('question-container');
     let subjectButton = document.getElementsByClassName('.subject-button')
-    let backToSubjectButton =document.getElementById('back-to-subjects');
+    let backToSubjects =document.getElementById('back-to-subjects');
     let selectedSubjectText = document.getElementById('selected-subject');
     let startTestButton = document.getElementById('start-test');
     let optionsContainer = document.getElementById('options-container');
@@ -113,8 +113,60 @@ document.addEventListener('DOMContentLoaded', () => {
     let questions = [];
     let currentQuestionIndex = 0;
 
-    // Go back to home page
+    // To navigate to test page
 
+    if (startGame) {
+        startGame.addEventListener('click', () => {
+            window.location.href = 'game.html';
+        });
+    }
+
+
+    // Display popup window for "About Game"
+    if (aboutTheGame) {
+        aboutTheGame.addEventListener('click', () => {
+            document.getElementById('about-popup').style.display ='flex';
+        });
+    }
+
+    // Close popup window for "About Game"
+    if (closeAboutGame) {
+        closeAboutGame.addEventListener('click', () => {
+            document.getElementById('about-popup').style.display = 'none';
+        });
+    }
+
+    // Call popup window for "Instructions"
+    if (instructions) {
+        instructions.addEventListener('click', () => {
+            document.getElementById('instructions-popup').style.display = 'flex';
+        });
+    }
+
+    // Close popup window for "Instructions"
+    if (backToAboutGame) {
+        backToAboutGame.addEventListener('click', () => {
+            document.getElementById('instructions-popup').style.display = 'none';
+            document.getElementById('about-popup').style.display = 'flex';
+        });
+    }
+
+    // Call popup window for "Game Rules"
+    if (rules) {
+        rules.addEventListener('click', () => {
+            document.getElementById('game-rules-popup').style.display = 'flex';
+        });
+    }
+
+    // Close popup window for "Game Rules"
+    if (backToAboutRules) {
+        backToAboutRules.addEventListener('click', () => {
+            document.getElementById('game-rules-popup').style.display = 'none';
+            document.getElementById('about-popup').style.display = 'flex';
+        });
+    }
+
+    // Return to home page from test area
     if (backToHomePage) {
         backToHomePage.addEventListener('click', () => {
             window.location.href = 'index.html';
@@ -151,68 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    /*function loadQuestions(level, subject, year) {
-        questions = questionBank[level][subject][year];
-        startTest();
-    } */
-
-    /*function startTest() {
-        displayQuestion();
-    }*/
-
-    /*function displayQuestion() {
-        if (currentQuestionIndex < questions.length) {
-            const currentQuestion = questions[currentQuestionIndex];
-            const {
-                question,
-                options
-            } = currentQuestion;
-            questionContainer.querySelector('#question').innerText = question;
-            optionsContainer.innerHTML = '';
-            options.forEach((option, index) => {
-                const optionButton = document.createElement('button');
-                optionButton.classList.add('option-btn');
-                optionButton.innerText = `${String.fromCharCode(65 + index)}. ${option}`;
-                optionsContainer.appendChild(optionButton);
-
-                optionButton.addEventListener('click', () => checkAnswer(option, currentQuestion.correctAnswer));
-            });
-        } else {
-            alert('Test completed');
-        }
-
-    }
-
-    function checkAnswer(selectedOption, correctAnswer) {
-        if (selectedOption === correctAnswer) {
-            alert('Correct!');
-        } else {
-            alert('Wrong!');
-        }
-    
-        currentQuestionIndex++;
-        displayQuestion();
-    } */
-
-    /*document.querySelectorAll('.subject-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            let subject = e.currentTarget.getAttribute('data-subject');
-            selectedSubjectText.inerText = subject;
-            subjectSelectionJss.style.display = 'none';
-            subjectSelectionSss.style.display = 'none';
-            year.style.display = 'flex';
-        });
-
-        startTestButton.addEventListener('click', () => {
-            year.style.display = 'none';
-            let testSection = document.getElementById('test-section');
-            testSection.style.display = 'flex';
-        });
-
-    }); */
-
-
-
     /*document.querySelectorAll('.subject-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             let subject = e.currentTarget.getAttribute('data-subject');
@@ -240,14 +230,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    if (backToSubjects) {
+        backToSubjects.addEventListener('click', () => {
+            if(subjectSelectionJss) {
+                yearSelection.style.display = 'none';
+                subjectSelectionJss.style.display = 'flex';
+            } else {
+                subjectSelectionSss.style.display = 'flex'
+            }
+        });
+    }
+
     /*backToSubjects.addEventListener('click', () => {
         yearSelection.style.display = 'none';
-        if (document.getElementById('subject-selection-jss').style.display === 'none') {
-            subjectSelectionSss.style.display = 'flex';
-        } else {
-            subjectSelectionJss.style.display = 'flex';
-        }
+            if (document.getElementById('suject-selection-jss').style.display = 'none') {
+                subjectSelectionSss.style.display = 'flex';
+            } else {
+                subjectSelectionSss.style.display = 'flex';
+            }
+        });
+    }*/
+
+    /*if (backToSubjects) {
+        backToSubjects.addEventListener('click', () => {
+            yearSelection.style.display = 'none';
+            levelSelection.style.display = 'flex';
+        });
+    }*/
+
+    /*backJss.addEventListener('click', () => {
+        subjectSelectionJss.style.display ='none';
+        levelSelection.style.display = 'flex';
+    });
+
+    backSss.addEventListener('click', () =>{
+        subjectSelectionSss.style.display = 'none';
+        levelSelection.style.display = 'flex';
     });*/
+
 
     /*startTestButton.addEventListener('click', () => {
         yearSelection.style.display ='none';
@@ -263,48 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
      function startTest() {
         displayQuestion();
     } */
-
-
-
-    //Start Game
-
-    document.getElementById('start-game').addEventListener('click', () => {
-        window.location.href = 'game.html';
-    });
-
-
-    // Call popup window for "About Game"
-    document.getElementById('about-the-game').addEventListener('click', () => {
-        document.getElementById('about-popup').style.display = 'flex';
-    });
-
-    // Close popup window for "About Game"
-    document.getElementById('close-about-game').addEventListener('click', () => {
-        document.getElementById('about-popup').style.display = 'none';
-    });
-
-
-    // Call popup window for "Instructions"
-    document.getElementById('instructions').addEventListener('click', () => {
-        document.getElementById('instructions-popup').style.display = 'flex';
-    });
-
-    // Close popup window for "Instructions"
-    document.getElementById('back-to-about-game').addEventListener('click', () => {
-        document.getElementById('instructions-popup').style.display = 'none';
-        document.getElementById('about-popup').style.display = 'flex';
-    });
-
-    // Call popup window for "Game Rules"
-    document.getElementById('rules').addEventListener('click', () => {
-        document.getElementById('game-rules-popup').style.display = 'flex';
-    });
-
-    // Close popup window for "Game Rules"
-    document.getElementById('back-to-about-rules').addEventListener('click', () => {
-        document.getElementById('game-rules-popup').style.display = 'none';
-        document.getElementById('about-popup').style.display = 'flex';
-    });
 
 
 });
