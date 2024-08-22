@@ -56,6 +56,7 @@ const questionBank = {
                 {
                     "question": "The stories her children told her made her ……",
                     "options": ["to laugh", "laughing", "laughed", "laugh"],
+                    "correctAnswer": "laugh"
                 },
                 {
                     "question": "They have not bought …… of the two prescribed books.",
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let yearDropdown = document.getElementById('year-dropdown');
     let testSection = document.getElementById('test-section');
     let questionContainer = document.getElementById('question-container');
-    let subjectButton = document.getElementsByClassName('.subject-button')
+    let subjectButton = document.querySelectorAll('subject-button')
     let backToSubjects =document.getElementById('back-to-subjects');
     let selectedSubjectText = document.getElementById('selected-subject');
     let startTest = document.getElementById('start-test');
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Display popup window for "About Game"
     if (aboutTheGame) {
         aboutTheGame.addEventListener('click', () => {
-            document.getElementById('about-popup').style.display ='flex';
+            document.getElementById('about-popup').style.display = 'flex';
         });
     }
 
@@ -235,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (backToSubjects) {
         backToSubjects.addEventListener('click', () => {
-            if(subjectSelectionJss) {
+            if(subjectSelectionJss.style.display = 'none') {
                 yearSelection.style.display = 'none';
                 subjectSelectionJss.style.display = 'flex';
             } else {
@@ -243,28 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    /*startTest.addEventListener('click', () => {
-        if (yearDropdown.value !== " ") { //condition to check if the "yearDropdown" has a value
-            
-            questions = questionBank[level][subject][year];
-
-
-            yearSelection.style.display = 'none';
-            testSection.style.display = 'block';
-
-
-            displayQuestion();
-        } else {
-            alert ('Please select a year to proceed.');
-        }
-    }); */
-
-    /*document.querySelectorAll('.subject-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            yearSelection.style.display = 'block';
-        });
-    });*/
 
     startTest.addEventListener('click', () => {
         if (yearDropdown.value !== " ") {
@@ -276,60 +255,71 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreBoard.remaining = questions.length;
 
             yearSelection.style.display = 'none';
-            testSection.style.display = 'block'
+            testSection.style.display = 'block';
+
+            updateScoreDisplay()
             displayQuestion();
             startTimer();
         } else {
-            alert('Please selecet a year to proceed.');
+            alert('Please select a year to proceed.');
         }
     });
 
+    function updateScoreDisplay() {
+        document.getElementById('correct-score').textContent = scoreBoard.correct;
+        document.getElementById('wrong-score').textContent = scoreBoard.wrong;
+        document.getElementById('remaining-questions').textContent = scoreBoard.remaining;
+    }
+
     function displayQuestion() {
+        //Load current question from question bank
         let currentQuestion = questions[currentQuestionIndex];
         //call question text
         questionContainer.querySelector('#question').textContent = currentQuestion.question;
+
         const optionPrefixes = ['A', 'B', 'C', 'D'];
         let optionButtons = optionsContainer.querySelectorAll('.option-btn');
         optionButtons.forEach((btn, index) => {
-            btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`; /*. currentQuestion.options[index];*/
+            btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`; //currentQuestion.options[index];
             btn.onclick = () => checkAnswer(currentQuestion.options[index]);
         });
     } 
 
-    function displayQuestion() {
-        console.log("Displaying question", currentQuestionIndex, questions);
+    function checkAnswer(selectedAnswer) {
         let currentQuestion = questions[currentQuestionIndex];
-        if(!currentQuestion) {
-            console.error("No question found for index", currentQuestionIndex);
-            return;
+        if (selectedAnswer === currentQuestion.correctAnswer) {
+            scoreBoard.correct++;
+            alert('Correct!');
+        } else {
+            scoreBoard.wrong++;
+            alert('Try Again Later!');
         }
 
-        questionContainer.querySelector('#question').textContent = currentQuestion.question;
-        let optionButtons = optionsContainer.querySelectorAll('.option-btn');
-        optionButtons.forEach((btn, index) => {
-            btn.textContent = currentQuestion.options[index];
-            btn.onclick = () => checkAnswer(currentQuestion.options[index]);
-        });
+        scoreBoard.remaining--;
+
+        updateScoreDisplay();
+
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            displayQuestion();
+        } else {
+            alert('Test completed!');
+            clearInterval(timeInterval)
+        }
     }
 
-    optionButtons.forEach((btn, index) => {
-        btn.setAttribute('data-prefix', optionPrefixes[index]);
-        let currentQuestion = questions[currentQuestionIndex];
-        btn.textContent = `${currentQuestion.options[index]}`;
-        btn.onclick = () => checkAnswer(currentQuestion.options[index]);
-    });
-
-
-    /*function loadQuestions(level, subject, year) {
-        if (questionBank[level] && questionBank[level][subject] && questionBank[level][subject][year]) {
-            questions = questionBank[level][subject][year];
-            startTest();
-        } else {
-            console.error("Question not found for the given level, subject or year")
-        }
-    } */
-
-   
-
+    function startTimer() {
+        let timeLeft = 60;
+        timerBar.style.width = '100%';
+        let countdown = setInterval(() => {
+            timeLeft--;
+            timerBar.style.width = `${(timeLeft / 60)  * 100}%`;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                alert('Time is up!');
+                testSection.style.display ='none';
+            }
+        }, 1000);
+    }
 
 });

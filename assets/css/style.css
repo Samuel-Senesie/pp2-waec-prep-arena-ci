@@ -287,7 +287,9 @@ i {
     margin-right: 1rem;
     background-color: white;
     text-transform: none;
-    border: 0.1rem solid rgba(86, 165, 235, 0.25)
+    border: 0.1rem solid rgba(86, 165, 235, 0.25);
+    text-align: left;
+    justify-content: left;
 }
 
 .option-btn::before{
