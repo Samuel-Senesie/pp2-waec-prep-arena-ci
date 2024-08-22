@@ -100,18 +100,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let backSss = document.getElementById('back-sss');
     let yearSelection = document.getElementById('year-selection');
     let yearDropdown = document.getElementById('year-dropdown');
+    let testSection = document.getElementById('test-section');
     let questionContainer = document.getElementById('question-container');
     let subjectButton = document.getElementsByClassName('.subject-button')
     let backToSubjects =document.getElementById('back-to-subjects');
     let selectedSubjectText = document.getElementById('selected-subject');
-    let startTestButton = document.getElementById('start-test');
+    let startTest = document.getElementById('start-test');
     let optionsContainer = document.getElementById('options-container');
     let timerBar = document.getElementById('timer-bar');
     let results = document.getElementById('results');
+    let scoreBoard = {correct: 0, wrong: 0, remaining: 60}
 
     //To store questions and track current ones
     let questions = [];
     let currentQuestionIndex = 0;
+    let timeInterval;
 
     // To navigate to test page
 
@@ -241,48 +244,92 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /*backToSubjects.addEventListener('click', () => {
-        yearSelection.style.display = 'none';
-            if (document.getElementById('suject-selection-jss').style.display = 'none') {
-                subjectSelectionSss.style.display = 'flex';
-            } else {
-                subjectSelectionSss.style.display = 'flex';
-            }
-        });
-    }*/
+    /*startTest.addEventListener('click', () => {
+        if (yearDropdown.value !== " ") { //condition to check if the "yearDropdown" has a value
+            
+            questions = questionBank[level][subject][year];
 
-    /*if (backToSubjects) {
-        backToSubjects.addEventListener('click', () => {
+
             yearSelection.style.display = 'none';
-            levelSelection.style.display = 'flex';
+            testSection.style.display = 'block';
+
+
+            displayQuestion();
+        } else {
+            alert ('Please select a year to proceed.');
+        }
+    }); */
+
+    /*document.querySelectorAll('.subject-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            yearSelection.style.display = 'block';
         });
-    }*/
-
-    /*backJss.addEventListener('click', () => {
-        subjectSelectionJss.style.display ='none';
-        levelSelection.style.display = 'flex';
-    });
-
-    backSss.addEventListener('click', () =>{
-        subjectSelectionSss.style.display = 'none';
-        levelSelection.style.display = 'flex';
     });*/
 
+    startTest.addEventListener('click', () => {
+        if (yearDropdown.value !== " ") {
+            let level = 'jss';
+            let subject = 'Language Arts';
+            let year = yearDropdown.value;
 
-    /*startTestButton.addEventListener('click', () => {
-        yearSelection.style.display ='none';
-        testSection.style.display = 'block'
-        startTest();
+            questions = questionBank[level][subject][year];
+            scoreBoard.remaining = questions.length;
+
+            yearSelection.style.display = 'none';
+            testSection.style.display = 'block'
+            displayQuestion();
+            startTimer();
+        } else {
+            alert('Please selecet a year to proceed.');
+        }
     });
 
-    function loadQuestions(level, subject, year) {
-        questions = questionBank[level][subject][year];
-        currentQuestionIndex = 0;
+    function displayQuestion() {
+        let currentQuestion = questions[currentQuestionIndex];
+        //call question text
+        questionContainer.querySelector('#question').textContent = currentQuestion.question;
+        const optionPrefixes = ['A', 'B', 'C', 'D'];
+        let optionButtons = optionsContainer.querySelectorAll('.option-btn');
+        optionButtons.forEach((btn, index) => {
+            btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`; /*. currentQuestion.options[index];*/
+            btn.onclick = () => checkAnswer(currentQuestion.options[index]);
+        });
+    } 
+
+    function displayQuestion() {
+        console.log("Displaying question", currentQuestionIndex, questions);
+        let currentQuestion = questions[currentQuestionIndex];
+        if(!currentQuestion) {
+            console.error("No question found for index", currentQuestionIndex);
+            return;
+        }
+
+        questionContainer.querySelector('#question').textContent = currentQuestion.question;
+        let optionButtons = optionsContainer.querySelectorAll('.option-btn');
+        optionButtons.forEach((btn, index) => {
+            btn.textContent = currentQuestion.options[index];
+            btn.onclick = () => checkAnswer(currentQuestion.options[index]);
+        });
     }
 
-     function startTest() {
-        displayQuestion();
+    optionButtons.forEach((btn, index) => {
+        btn.setAttribute('data-prefix', optionPrefixes[index]);
+        let currentQuestion = questions[currentQuestionIndex];
+        btn.textContent = `${currentQuestion.options[index]}`;
+        btn.onclick = () => checkAnswer(currentQuestion.options[index]);
+    });
+
+
+    /*function loadQuestions(level, subject, year) {
+        if (questionBank[level] && questionBank[level][subject] && questionBank[level][subject][year]) {
+            questions = questionBank[level][subject][year];
+            startTest();
+        } else {
+            console.error("Question not found for the given level, subject or year")
+        }
     } */
+
+   
 
 
 });

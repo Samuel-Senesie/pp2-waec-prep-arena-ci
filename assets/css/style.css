@@ -263,6 +263,38 @@ i {
     gap: 5rem;
 }
 
+#test-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #007BFF;
+}
+
+#question-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-top: 5rem;
+    font-size: 1.3rem;
+}
+
+.option-btn {
+    width: 100%;
+    border-radius: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: white;
+    text-transform: none;
+    border: 0.1rem solid rgba(86, 165, 235, 0.25)
+}
+
+.option-btn::before{
+    content: attr(data-prefix);
+    font-weight: bold;
+}
+
 /*.btn--big::after {
     content: attr(data-level);
     font-size: 1rem;
