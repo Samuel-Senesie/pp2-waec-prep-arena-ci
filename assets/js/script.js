@@ -111,11 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerBar = document.getElementById('timer-bar');
     let results = document.getElementById('results');
     let scoreBoard = {correct: 0, wrong: 0, remaining: 60}
+    let reviewSection = document.getElementById('review-section');
 
     //To store questions and track current ones
     let questions = [];
     let currentQuestionIndex = 0;
     let timeInterval;
+    let userAnswers = [];
 
     // To navigate to test page
 
@@ -253,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             questions = questionBank[level][subject][year];
             scoreBoard.remaining = questions.length;
+            userAnswers = [];
 
             yearSelection.style.display = 'none';
             testSection.style.display = 'block';
@@ -281,7 +284,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let optionButtons = optionsContainer.querySelectorAll('.option-btn');
         optionButtons.forEach((btn, index) => {
             btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`; //currentQuestion.options[index];
-            btn.onclick = () => checkAnswer(currentQuestion.options[index]);
+            btn.onclick = () => {
+                userAnswers[currentQuestionIndex] = currentQuestion.options[index]; 
+                checkAnswer(currentQuestion.options[index]);
+            };
         });
     } 
 
@@ -304,7 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
             displayQuestion();
         } else {
             alert('Test completed!');
-            clearInterval(timeInterval)
+            clearInterval(timeInterval);
+            displayReview();
         }
     }
 
@@ -318,8 +325,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(countdown);
                 alert('Time is up!');
                 testSection.style.display ='none';
+                displayReview();
             }
         }, 1000);
+    }
+
+    function displayReview() {
+        displayReview.style.display = 'block';
+        reviewSection.innerHTML = '';
+
+        questions.forEach((question, index) => {
+            let userAnswer = userAnswers[index] || 'Not Answered';
+            let correctAnswer = question.correctAnswer;
+            let questionHTML = `<div class="review-question">
+            <p><strong>Q${index + 1}:</strong>${question.question}</p>
+            <p><strong>Your Answer:</strong> <span style ="color: ${userAnswer === correctAnswer ? 'green' : 'red'}">${userAnswer}</span></p>
+            <p><strong>Correct Answer:</strong> <span style="color: green">${correctAnswer}</span></p>
+            </div>`;
+
+            reviewSection.innerHTML += questionHTML;
+        });
+
+        reviewSection.innerHTML += '<button id=restart-test>Restart Test</button>';
+        document.getElementById('restart-test').addEventListener('click', () => {
+            location.reload();
+        });
     }
 
 });
