@@ -34,7 +34,7 @@ const questionBank = {
                     "correctAnswer": "after"
                 },
                 {
-                    "question": "That girls is allergic ….. dust.",
+                    "question": "That girl is allergic ….. dust.",
                     "options": ["with", "to", "against", "about"],
                     "correctAnswer": "to"
                 },
@@ -72,7 +72,7 @@ const questionBank = {
                     "question": "The oxen lay on the bare floor, …..?",
                     "options": ["didn’t they", "don’t they", "didn’t it", "isn’t it"],
                     "correctAnswer": "didn’t they"
-                },
+                }
 
             ]
         }
@@ -110,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let optionsContainer = document.getElementById('options-container');
     let timerBar = document.getElementById('timer-bar');
     let results = document.getElementById('results');
+    let nextQuestion = document.getElementById('next-question');
+    let pause = document.getElementById('pause');
+    let resume = document.getElementById('resume');
     let scoreBoard = {correct: 0, wrong: 0, remaining: 60}
     let reviewSection = document.getElementById('review-section');
 
@@ -117,7 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let questions = [];
     let currentQuestionIndex = 0;
     let timeInterval;
-    let userAnswers = [];
+    let userAnswers = []; //sting to store user's answeres for review
+    let timeLeft = 60;
+    let isPaused = false;
 
     // To navigate to test page
 
@@ -207,27 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-
-    /*document.querySelectorAll('.subject-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            let subject = e.currentTarget.getAttribute('data-subject');
-            let level = 'jss';
-            let year = '2019';
-    
-            selectedSubjectText.innerText = subject;
-            loadQuestions(level, subject, year);
-        });
-    
-        startTestButton.addEventListener('click', () => {
-            year.style.display = 'none';
-            let testSection = document.getElementById('test-section');
-            testSection.style.display = 'flex';
-        
-        });
-    
-    });*/
-
     document.querySelectorAll('.subject-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             subjectSelectionJss.style.display = 'none';
@@ -238,11 +222,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (backToSubjects) {
         backToSubjects.addEventListener('click', () => {
-            if(subjectSelectionJss.style.display = 'none') {
-                yearSelection.style.display = 'none';
+            yearSelection.style.display = 'none';
+            if (subjectSelectionJss.style.display === 'none') {
                 subjectSelectionJss.style.display = 'flex';
             } else {
-                subjectSelectionSss.style.display = 'flex'
+                subjectSelectionSss.style.display = 'flex';
             }
         });
     }
@@ -256,11 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
             questions = questionBank[level][subject][year];
             scoreBoard.remaining = questions.length;
             userAnswers = [];
+            currentQuestionIndex = 0;
 
             yearSelection.style.display = 'none';
             testSection.style.display = 'block';
 
-            updateScoreDisplay()
+            updateScoreDisplay();
             displayQuestion();
             startTimer();
         } else {
@@ -283,12 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionPrefixes = ['A', 'B', 'C', 'D'];
         let optionButtons = optionsContainer.querySelectorAll('.option-btn');
         optionButtons.forEach((btn, index) => {
-            btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`; //currentQuestion.options[index];
+            btn.innerHTML = `<strong>${optionPrefixes[index]}.</strong> ${currentQuestion.options[index]}`;
+            /*btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`;*/ //currentQuestion.options[index];
             btn.onclick = () => {
-                userAnswers[currentQuestionIndex] = currentQuestion.options[index]; 
+                userAnswers[currentQuestionIndex] = currentQuestion.options[index];
                 checkAnswer(currentQuestion.options[index]);
             };
         });
+
+        resetTimer();
     } 
 
     function checkAnswer(selectedAnswer) {
@@ -296,13 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedAnswer === currentQuestion.correctAnswer) {
             scoreBoard.correct++;
             alert('Correct!');
-        } else {
+        } else if (selectedAnswer !== null){
             scoreBoard.wrong++;
             alert('Try Again Later!');
         }
 
         scoreBoard.remaining--;
-
         updateScoreDisplay();
 
         currentQuestionIndex++;
@@ -315,38 +302,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    nextQuestion.addEventListener('click', () => {
+        userAnswers[currentQuestionIndex] = 'Skipped';
+        checkAnswer(null);
+    });
+
+    pause.addEventListener('click', () => {
+        isPaused = true;
+        questionContainer.style.display = 'none';
+        optionsContainer.style.display = 'none';
+    });
+
+    resume.addEventListener('click', () => {
+        isPaused = false;
+        questionContainer.style.display = 'flex';
+        optionsContainer.style.display = 'flex';
+    });
+
     function startTimer() {
-        let timeLeft = 60;
+        timeLeft = 60;
         timerBar.style.width = '100%';
-        let countdown = setInterval(() => {
-            timeLeft--;
-            timerBar.style.width = `${(timeLeft / 60)  * 100}%`;
-            if (timeLeft <= 0) {
-                clearInterval(countdown);
-                alert('Time is up!');
-                testSection.style.display ='none';
-                displayReview();
+        timeInterval = setInterval(() => {
+            if (!isPaused) {
+                timeLeft--;
+                timerBar.style.width = `${(timeLeft / 60) * 100}%`;
+                if (timeLeft <= 0) {
+                    clearInterval(timeInterval);
+                    alert('Time is up!');
+                    checkAnswer(null);
+                }
             }
         }, 1000);
     }
+    
+    function resetTimer() {
+        clearInterval(timeInterval);
+        startTimer();
+    }
+
+
 
     function displayReview() {
-        displayReview.style.display = 'block';
+        testSection.style.display = 'none';
+        reviewSection.style.display = 'block';
         reviewSection.innerHTML = '';
 
         questions.forEach((question, index) => {
             let userAnswer = userAnswers[index] || 'Not Answered';
             let correctAnswer = question.correctAnswer;
             let questionHTML = `<div class="review-question">
-            <p><strong>Q${index + 1}:</strong>${question.question}</p>
-            <p><strong>Your Answer:</strong> <span style ="color: ${userAnswer === correctAnswer ? 'green' : 'red'}">${userAnswer}</span></p>
+            <p><strong>Q${index + 1}:</strong> ${question.question}</p>
+            <p><strong>Your Answer:</strong> <span style="color: ${userAnswer === correctAnswer ? 'green' : 'red'}">${userAnswer}</span></p>
             <p><strong>Correct Answer:</strong> <span style="color: green">${correctAnswer}</span></p>
             </div>`;
 
             reviewSection.innerHTML += questionHTML;
         });
 
-        reviewSection.innerHTML += '<button id=restart-test>Restart Test</button>';
+        reviewSection.innerHTML += '<button id="restart-test">Restart Test</button>';
         document.getElementById('restart-test').addEventListener('click', () => {
             location.reload();
         });
