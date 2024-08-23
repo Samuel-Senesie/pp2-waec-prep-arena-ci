@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let levelSelection = document.getElementById('level-selection');
     let jssLevel = document.getElementById('jss-level');
     let sssLevel = document.getElementById('sss-level');
-    let subjectSelection = document.getElementById('subject-selection')
+    let subjectSelection = document.getElementById('subject-selection');
     let subjectSelectionJss = document.getElementById('subject-selection-jss');
     let subjectSelectionSss = document.getElementById('subject-selection-sss');
     let backJss = document.getElementById('back-jss');
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let yearDropdown = document.getElementById('year-dropdown');
     let testSection = document.getElementById('test-section');
     let questionContainer = document.getElementById('question-container');
-    let subjectButton = document.querySelectorAll('subject-button')
+    let subjectButton = document.querySelectorAll('.subject-button');
     let backToSubjects =document.getElementById('back-to-subjects');
     let selectedSubjectText = document.getElementById('selected-subject');
     let startTest = document.getElementById('start-test');
@@ -278,19 +278,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         resetTimer();
-    } 
+    }
+
+    function showNotification(type, message) {
+        const notification = document.createElement('div');
+        notification.classList.add('notification', type);
+        notification.textContent = message;
+
+        const notificationContainer = document.getElementById('notification-container');
+        notificationContainer.appendChild(notification);
+
+        setTimeout(() => {
+            notification.style.display = 'block';
+            notification.style.opacity = '1';
+        }, 10);
+
+        setTimeout(() => {
+            hideNotification(notification);
+        }, 2000);
+    }
+
+    function hideNotification(notification) {
+        notification.style.opacity = '0';
+        setTimeout(() => {
+            notification.style.display = 'none';
+            notification.remove();
+        }, 500);
+    }
 
     function checkAnswer(selectedAnswer) {
         let currentQuestion = questions[currentQuestionIndex];
         if (selectedAnswer === currentQuestion.correctAnswer) {
             scoreBoard.correct++;
-            alert('Correct!');
-        } else if (selectedAnswer === null || selectedAnswer === 'Skipped'){
+            showNotification('success', 'Correct!');
+        } else if (selectedAnswer === null || selectedAnswer === 'Skipped') {
             scoreBoard.unanswered++;
-            alert('Do you want to come again Later?');
+            showNotification('warning', 'Do you want to come again Later?');
         } else {
             scoreBoard.wrong++;
-            alert('Try Again Later!');
+            showNotification('error', 'Try Again Later!');
         }
 
         scoreBoard.remaining--;
@@ -300,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentQuestionIndex < questions.length) {
             displayQuestion();
         } else {
-            alert('Test completed!');
+            showNotification('info', 'Test completed!');
             clearInterval(timeInterval);
             displayReview();
         }
@@ -315,12 +341,14 @@ document.addEventListener('DOMContentLoaded', () => {
         isPaused = true;
         questionContainer.style.display = 'none';
         optionsContainer.style.display = 'none';
+        showNotification('You paused test')
     });
 
     resume.addEventListener('click', () => {
         isPaused = false;
         questionContainer.style.display = 'block';
         optionsContainer.style.display = 'flex';
+        showNotification('info', 'You resumed test.');
     });
 
     function startTimer() {
@@ -338,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     timerBar.style.backgroundColor = 'green';
                 }
                 
-                if (timeLeft <= 0) { 
+                if (timeLeft <= 0) {
                     clearInterval(timeInterval);
                     alert('Time is up!');
                     checkAnswer(null);

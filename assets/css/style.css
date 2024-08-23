@@ -313,8 +313,46 @@ i {
 #review-section {
     display: flex;
     background: #007BFF;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    padding: 1.5rem;
+    gap: 0.5rem;
     width: 100%;
     height: 100vh;
+}
+
+.notification-container {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    width: 300px;
+    z-index: 1001;
+}
+
+.notification {
+    padding: 15px, 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.notification.success {
+    background-color: green;
+}
+
+.notification.error {
+    background-color: red;
+}
+.notification.warning {
+    background-color: orange;
+}
+.notification.info{
+    background-color: yellow;
 }
 
 /*.btn--big::after {
