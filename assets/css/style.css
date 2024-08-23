@@ -297,15 +297,24 @@ i {
     font-weight: bold;
 }
 
+#options-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+}
+
 #timer-bar {
     width: 100%;
     height: 30px;
     background: green;
 }
 
-#rreview-section {
+#review-section {
     display: flex;
+    background: #007BFF;
     width: 100%;
+    height: 100vh;
 }
 
 /*.btn--big::after {

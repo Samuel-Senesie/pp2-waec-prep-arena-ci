@@ -21,7 +21,7 @@ const questionBank = {
                 {
                     "question": "This phone is not mine; it is ...",
                     "options": ["mine uncle’s", "my uncle’s", "my uncles", "mine uncle"],
-                    "correctAnswer": "my uncle’s",
+                    "correctAnswer": "my uncle’s"
                 },
                 {
                     "question": "I wish I ….. my friend next week.",
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextQuestion = document.getElementById('next-question');
     let pause = document.getElementById('pause');
     let resume = document.getElementById('resume');
-    let scoreBoard = {correct: 0, wrong: 0, remaining: 60}
+    let scoreBoard = {correct: 0, wrong: 0, unanswered: 0, remaining: 60}
     let reviewSection = document.getElementById('review-section');
 
     //To store questions and track current ones
@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateScoreDisplay() {
         document.getElementById('correct-score').textContent = scoreBoard.correct;
         document.getElementById('wrong-score').textContent = scoreBoard.wrong;
+        document.getElementById('unanswered-score').textContent = scoreBoard.unanswered;
         document.getElementById('remaining-questions').textContent = scoreBoard.remaining;
     }
 
@@ -284,7 +285,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedAnswer === currentQuestion.correctAnswer) {
             scoreBoard.correct++;
             alert('Correct!');
-        } else if (selectedAnswer !== null){
+        } else if (selectedAnswer === null || selectedAnswer === 'Skipped'){
+            scoreBoard.unanswered++;
+            alert('Do you want to come again Later?');
+        } else {
             scoreBoard.wrong++;
             alert('Try Again Later!');
         }
@@ -304,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextQuestion.addEventListener('click', () => {
         userAnswers[currentQuestionIndex] = 'Skipped';
-        checkAnswer(null);
+        checkAnswer('skipped');
     });
 
     pause.addEventListener('click', () => {
@@ -315,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resume.addEventListener('click', () => {
         isPaused = false;
-        questionContainer.style.display = 'flex';
+        questionContainer.style.display = 'block';
         optionsContainer.style.display = 'flex';
     });
 
@@ -326,7 +330,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isPaused) {
                 timeLeft--;
                 timerBar.style.width = `${(timeLeft / 60) * 100}%`;
-                if (timeLeft <= 0) {
+                if (timeLeft <= 10) {
+                    timerBar.style.backgroundColor = 'red';
+                } else if (timeLeft <= 30) {
+                    timerBar.style.backgroundColor = 'orange';
+                } else {
+                    timerBar.style.backgroundColor = 'green';
+                }
+                
+                if (timeLeft <= 0) { 
                     clearInterval(timeInterval);
                     alert('Time is up!');
                     checkAnswer(null);
@@ -350,9 +362,16 @@ document.addEventListener('DOMContentLoaded', () => {
         questions.forEach((question, index) => {
             let userAnswer = userAnswers[index] || 'Not Answered';
             let correctAnswer = question.correctAnswer;
+
+            let answerColor;
+            if (userAnswer === 'Not Answered' || userAnswer === 'Skipped') {
+                answerColor = 'orange';
+            } else {
+                answerColor = userAnswer === correctAnswer ? 'green' : 'red';
+            }
             let questionHTML = `<div class="review-question">
             <p><strong>Q${index + 1}:</strong> ${question.question}</p>
-            <p><strong>Your Answer:</strong> <span style="color: ${userAnswer === correctAnswer ? 'green' : 'red'}">${userAnswer}</span></p>
+            <p><strong>Your Answer:</strong> <span style="color: ${answerColor}">${userAnswer}</span></p>
             <p><strong>Correct Answer:</strong> <span style="color: green">${correctAnswer}</span></p>
             </div>`;
 
