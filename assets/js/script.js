@@ -335,6 +335,17 @@ document.addEventListener('DOMContentLoaded', () => {
     nextQuestion.addEventListener('click', () => {
         userAnswers[currentQuestionIndex] = 'Skipped';
         checkAnswer('skipped');
+        scoreBoard.unanswered++;
+        scoreBoard.remaining--;
+        updateScoreDisplay();
+        currentQuestionIndex++;
+        if(currentQuestionIndex < questions.length) {
+            displayQuestion();
+        } else {
+            showNotification('info', 'Test completed!');
+            clearInterval(timeInterval);
+            displayReview();
+        }
     });
 
     pause.addEventListener('click', () => {

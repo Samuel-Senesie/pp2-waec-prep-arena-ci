@@ -83,10 +83,25 @@ i {
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
+
+#username-section > input{
+    width: 14rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    border: 5px solid #171717;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    background-color: lightgrey;
+    color: black;
+    font-weight: bold;
+}
+
 #level-selection,
 #about-game {
     width: 90%;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -242,6 +257,8 @@ i {
 #year-selection {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     height: 80vh;
     top: 50%;
@@ -302,6 +319,11 @@ i {
     flex-direction: column;
     width: 100%;
     height: 80vh;
+}
+
+.option-prefix {
+    color: black;
+    background-color: aqua;
 }
 
 #timer-bar {
