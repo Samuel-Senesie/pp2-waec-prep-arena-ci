@@ -26,12 +26,15 @@
          <!--Level selection buttons-->
         <div id="level-selection">
             <!--Username section-->
-            <div id="username-section">
-                <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="username">
+            <div id="username-container">
+                <div id="username-section">
+                    <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="username">
+                </div>
+                <div id="leaderboard-section">
+                    <button id="leaderboard" class="leaderboard" value="Leaderboard">Leaderboard</button>
+                </div>
             </div>
-            <div id="leaderboard-section">
-                <button id="leaderboard" class="leaderboard" value="Leaderboard">Leaderboard</button>
-            </div>
+            
             
             <h2>Select Level</h2>
             <button id="jss-level" class="level-btn" data-level="jss"><i class="fa-solid fa-graduation-cap"></i>JSS</button>
