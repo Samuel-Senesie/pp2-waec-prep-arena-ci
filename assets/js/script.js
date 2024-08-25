@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startGame = document.getElementById('start-game');
     const usernameInput = document.getElementById('username-input');
     const usernameContainer = document.getElementById('username-container');
-    const leaderboardButton = document.getElementById('leaderboard');
+    const leaderboardButton = document.getElementById('leaderboard-btn');
     const leaderboardSection = document.getElementById('leaderboard-section');
     /*const leaderboardTable = document.getElementById('leaderboard-table').getElementsByTagName('tbody')[0];*/
     const clearLeaderboard = document.getElementById('clear-leaderboard');
@@ -150,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Display leaderboard
 
     if (leaderboardButton) {
         leaderboardButton.addEventListener('click', () => {
@@ -321,21 +323,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update leaderboard section
     function updateLeaderboardSection() {
+        const leaderboardTable = document.getElementById('leaderboards-results');
         leaderboardTable.innerHTML = '';
         leaderboardData.forEach((entry, index) => {
             const row = leaderboardTable.insertRow(index);
-            row.insertCell(0).textContent = entry.name;
-            row.insertCell(1).textContent = entry.level;
-            row.insertCell(2).textContent = entry.subject;
-            row.insertCell(3).textContent = entry.score;
+            const nameCell =row.insertCell(0);
+            const levelCell = row.insertCell(1);
+            const subjectCell = row.insertCell(2);
+            const scoreCell = row.insertCell(3);
+
+            nameCell.textContent = entry.name;
+            levelCell.textContent = entry.level;
+            subjectCell.textContent = entry.subject;
+            scoreCell.textContent = entry.score;
         });
     }
 
     // Add score to leaderboard
+    const savedLeaderboardData = localStorage.getItem('leaderboardData');
+    if (savedLeaderboardData) {
+        leaderboardData =JSON.parse(savedLeaderboardData);
+    }
+    // Save leaderboard data to local storage
     function addScoreToLeaderBoard(name, level, subject, score) {
-        if (name && level && subject && score !== undefined) {
-            leaderboardData.push({name, level, subject, score});
-        }
+        leaderboardData.push({name, level, subject, score});
         localStorage.setItem('leaderboardData', JSON.stringify(leaderboardData));
         updateLeaderboardSection();
     }

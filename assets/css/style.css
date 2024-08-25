@@ -84,6 +84,7 @@ i {
     z-index: 1;
 }
 
+/* USERNAME */
 #username-container {
     display: flex;
     flex-direction: column;
@@ -112,11 +113,48 @@ i {
     color: black;
     font-weight: bold;
 }
-
+/* lEADERBOARD */
 #leaderboard-section {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80vh;
+    box-sizing: border-box;
     margin: 0, auto;
+    background: #007BFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 2.5rem;
+    gap: 3rem;
 }
+
+#leaderboard-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+}
+
+#leaderboard-table{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#leaderboard-table td, #leaderboard-table th{
+    border: 0.2rem solid #EDEDED;
+    padding: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+#leaderboard-table th {
+    background-color: #66ccff;
+}
+
 
 #level-selection,
 #about-game {
