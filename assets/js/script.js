@@ -229,16 +229,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (jssLevel) {
         jssLevel.addEventListener('click', () => {
-            levelSelection.style.display = 'none';
-            subjectSelectionJss.style.display = 'flex';
+            if (validateUsername ()) {
+                levelSelection.style.display = 'none';
+                subjectSelectionJss.style.display = 'flex';
+            }
+            
         });
     }
 
     if (sssLevel) {
         sssLevel.addEventListener('click', () => {
-            levelSelection.style.display = 'none';
-            subjectSelectionSss.style.display = 'flex';
+            if (validateUsername ()) {
+                levelSelection.style.display = 'none';
+                subjectSelectionSss.style.display = 'flex';
+            }
         });
+    }
+
+    // Validate username 
+    function validateUsername() {
+        const usernameInput = document.getElementById('username-input').value.trim();
+        if (usernameInput === '') {
+            alert('Please enter username to proceed');
+            return false;        
+        }
+        localStorage.setItem('username', usernameInput)
+        return true;
     }
 
     if (backJss) {
@@ -280,21 +296,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start test
     startTest.addEventListener('click', () => {
         if (yearDropdown.value.trim() !== " ") {
-            const level = 'jss';
-            const subject = 'Language Arts';
-            const year = yearDropdown.value;
-
-            questions = questionBank[level][subject][year];
-            scoreBoard.remaining = questions.length;
-            userAnswers = [];
-            currentQuestionIndex = 0;
-
-            yearSelection.style.display = 'none';
-            testSection.style.display = 'block';
-
-            updateScoreDisplay();
-            displayQuestion();
-            startTimer();
+            if (validateUsername()) {
+                const level = 'jss';
+                const subject = 'Language Arts';
+                const year = yearDropdown.value;
+    
+                questions = questionBank[level][subject][year];
+                scoreBoard.remaining = questions.length;
+                userAnswers = [];
+                currentQuestionIndex = 0;
+    
+                yearSelection.style.display = 'none';
+                testSection.style.display = 'block';
+    
+                updateScoreDisplay();
+                displayQuestion();
+                startTimer();
+            }
+           
         } else {
             alert('Please select a year to proceed.');
         }
