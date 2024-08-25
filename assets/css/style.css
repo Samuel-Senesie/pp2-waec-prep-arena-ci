@@ -275,13 +275,13 @@ i {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 5rem;
+    height: 5rem;
     padding-top: 0.6rem;
     border: 3px solid;
     margin: 0 1.9rem;
     transition: all 0.5s;
-    gap: 2rem;
+    gap: 1.7rem;
 }
 
 .btn--big::after{
@@ -292,7 +292,7 @@ i {
 }
 
 .btn--big i{
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: greenyellow;
 }
 
@@ -449,6 +449,7 @@ i {
     color: darkblue;
 }
 
+/* Display questions and answeres at the end of the test*/
 #review-section {
     display: flex;
     flex-direction: column;
@@ -464,22 +465,22 @@ i {
 
 .notification-container {
     position: fixed;
-    top: 50%;
-    right: 50%;
-    width: 300px;
+    top: 1rem;
+    right: 1rem;
+    width: 100%;
     z-index: 1001;
 }
 
 .notification {
     padding: 15px, 20px;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border-radius: 5px; 
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: none;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
 .notification.success {
