@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!--Meta tags for search engine optimization-->
     <meta name="description"
-        content="Game for puplis in examination classes in Sierra Leone. Educational game. Preparing for an exam. Exam preparation game. WAEC Exam. BECE Exam. WASSCE Exam. Sierra Leone. West Africa">
+        content="Game for pupils in examination classes in Sierra Leone. Educational game. Preparing for an exam. Exam preparation game. WAEC Exam. BECE Exam. WASSCE Exam. Sierra Leone. West Africa">
     <meta name="keywords"
         content="preparing for an examination, pupils, exams, WAEC, BECE, WASSCE, Sierra Leone, West Africa">
     <!--Favicon-->
@@ -16,29 +16,28 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>WAEC Prep Arena</title>
-    <!--Stylsheet-->
+    <!--Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div id="game-container">
-     
-         <!--Level selection buttons-->
+    
         <div id="level-selection">
             <!--Username section-->
             <div id="username-container">
                 <div id="username-section">
-                    <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="username">
+                    <input type="text" id="username-input" name="username" placeholder="Enter username" autocomplete="username">
                 </div>
-                <div id="leaderboard-section">
-                    <button id="leaderboard" class="leaderboard" value="Leaderboard">Leaderboard</button>
+                <div id="leaderboard-btn-section">
+                    <button id="leaderboard-btn" class="leaderboard" value="Leaderboard">Leaderboard</button>
                 </div>
             </div>
             
-            
+            <!--Level selection buttons-->
             <h2>Select Level</h2>
-            <button id="jss-level" class="level-btn" data-level="jss"><i class="fa-solid fa-graduation-cap"></i>JSS</button>
-            <button id="sss-level" class="level-btn" data-level="sss"><i class="fa-solid fa-graduation-cap"></i>SSS</button>
+            <button id="jss-level" class="level-btn" data-level="jss"><i class="fa-solid fa-graduation-cap"></i>Junior(JSS)</button>
+            <button id="sss-level" class="level-btn" data-level="sss"><i class="fa-solid fa-graduation-cap"></i>Senior(SSS)</button>
             <button id="back-to-home-page" href="index.html" ><i class="fa-solid fa-rotate-left"></i>Back</button>
         </div>
         
@@ -53,16 +52,17 @@
                         <th>Score</th>
                     </tr>
                 </thead>
+                <tbody id="leaderboard-results"></tbody>
             </table>
             <div id="leaderboard-controls">
-                <button id="clear-board" class="clear-board">Clear</button>
+                <button id="clear-leaderboard" class="clear-leaderboard">Clear</button>
                 <button id="back-to-level-selection" class="back-to-level-selection"><i class="fa-solid fa-rotate-left"></i>Back</button>
             </div>
         </div>
 
-        <!--div for JSS and SSS sujects selection-->
+        <!--div for JSS and SSS subjects selection-->
         <div id="subject-selection">
-            <!--Subject selection buttons for JSS level-->
+            <!--Subject selection buttons for Junior (JSS) level-->
             <div id="subject-selection-jss" style="display: none;">
                 <button class="subject-btn btn--big" data-subject="Mathematics" aria-label="Mathematics Button"><i class="fa-solid fa-square-root-variable"></i></button>
                 <button class="subject-btn btn--big" data-subject="Language Arts" aria-label="Language Arts Button"><i class="fa-solid fa-e"></i></button>
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <!--Subject selection for sss-->
+            <!--Subject selection buttons for Senior (SSS) level-->
             <div id="subject-selection-sss" style="display: none;">
                 <button class="subject-btn btn--big" data-subject="Maths" aria-label="Maths Button"><i class="fa-solid fa-square-root-variable"></i></button>
                 <button class="subject-btn btn--big" data-subject="English" aria-label="English Button"><i class="fa-solid fa-e"></i></button>
@@ -86,7 +86,7 @@
             </div>
         </div>
 
-        <!--Select years past exmination paper-->
+        <!--Select years past examination paper-->
         <div id="year-selection" style="display: none;" aria-label="Select Year">
             <select name="year" id="year-dropdown">
                 <option value=" " disabled selected>Select Year</option>
@@ -119,9 +119,9 @@
                 <button id="resume" role="button" aria-label="Resume"><i class="fa-solid fa-play"></i>Resume</button>
             </div>
             <div id="score-board">
-                <p class="score"> Correct:<span id="correct-score">0</span></p>
-                <p class="score"> Wrong:<span id="wrong-score">0</span></p>
-                <p class="score">Unanswered Questions:<span  id="unanswered-score">0</span></p>
+                <p class="score"> Correct: <span id="correct-score">0</span></p>
+                <p class="score"> Wrong: <span id="wrong-score">0</span></p>
+                <p class="score">Unanswered Questions: <span  id="unanswered-score">0</span></p>
                 <p >Reamaining:<span id="remaining-questions">60</span></p>
             </div>
         </div>
