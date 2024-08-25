@@ -250,11 +250,6 @@ i {
 }
 
 
-
-
-
-
-
 /* Subject Selection Window */
 #subject-selection-sss,
 #subject-selection-jss {
@@ -264,7 +259,9 @@ i {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    gap: 4rem;
+    gap: 3.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
     background-color: #007BFF;
     border-radius: 15px;
     top: 50%;
