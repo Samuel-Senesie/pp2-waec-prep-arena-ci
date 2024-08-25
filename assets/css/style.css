@@ -192,7 +192,6 @@ i {
 #game-rules-popup  {
     display: none;
     flex-direction: column;
-    /*position: fixed; */
     border-radius: 2.5rem;
     box-sizing: border-box;
     margin-top: 0.6rem;
@@ -210,7 +209,7 @@ i {
 
 #instructions-popup {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 #game-rules-popup {
@@ -239,14 +238,6 @@ i {
     align-items: center;
 }
 
-/*#about-game-container {
-    display: none;
-} */
-
-.start {
-    bottom: 100px;
-}
-
 .popup-content {
     display: flex;
     flex-direction: column;
@@ -261,11 +252,32 @@ i {
 
 #year-dropdown {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    width: 200px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 5rem;
+    font-size: 1.5rem;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    margin-top: 5rem;
+}
+
+
+
+
+/* Subject Selection Window */
+#subject-selection-sss,
+#subject-selection-jss {
+    width: 90%;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 4rem;
+    background-color: #007BFF;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
 }
 
 .btn--big {
@@ -273,12 +285,11 @@ i {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 90px;
-    height: 90px;
-    /*font-size: 1rem; */
+    width: 5.6rem;
+    height: 5.6rem;
     padding-top: 0.6rem;
     border: 3px solid;
-    margin: 0 30px;
+    margin: 0 1.9rem;
     transition: all 0.5s;
     gap: 2.5rem;
 }
@@ -297,31 +308,14 @@ i {
     color: greenyellow;
 }
 
-
-#subject-selection-sss,
-#subject-selection-jss {
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    margin-top: 2rem;
-    gap: 4rem;
-    background-color: #007BFF;
-    border-radius: 15px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-}
+/* Year Selection  Dropdown */
 
 #year-selection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     height: 80vh;
     top: 50%;
     left: 50%;
@@ -330,7 +324,7 @@ i {
     background-color: #007BFF;
     border-radius: 2.5rem;
     
-}
+} 
 
 #year-btns {
     display: flex;
@@ -439,13 +433,11 @@ i {
     background-color: yellow;
 }
 
-/*.btn--big::after {
-    content: attr(data-level);
-    font-size: 1rem;
-} */
+/*media queries */
+@media screen and (min-width:768px){
 
-/* Popup window for let's go button */
-/*.popup .popup-content {
-    position: fixed;
-    z-index: 1;
-} */
+    #start-game {
+        margin-top: 15rem;
+    }
+    
+}
