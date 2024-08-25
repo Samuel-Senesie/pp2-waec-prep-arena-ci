@@ -250,14 +250,7 @@ i {
 }
 
 
-#year-dropdown {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    width: 90%;
-    height: 2.5rem;
-    border-radius: 0.4rem;
-    margin-top: 5rem;
-}
+
 
 
 
@@ -285,13 +278,13 @@ i {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 5.6rem;
-    height: 5.6rem;
+    width: 5.5rem;
+    height: 5.5rem;
     padding-top: 0.6rem;
     border: 3px solid;
     margin: 0 1.9rem;
     transition: all 0.5s;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .btn--big::after{
@@ -326,6 +319,15 @@ i {
     
 } 
 
+#year-dropdown {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    margin-top: 5rem;
+}
+
 #year-btns {
     display: flex;
     flex-direction: column;
@@ -334,7 +336,7 @@ i {
     width: 100%;
     height: 60vh;
     gap: 5rem;
-}
+} 
 
 /* TEST Display Section */
 
@@ -454,7 +456,9 @@ i {
 
 #review-section {
     display: flex;
-    background: #007BFF;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: #E6ECF0;
     font-family: 'Roboto', sans-serif;
     text-align: left;
     padding: 1.5rem;
