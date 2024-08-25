@@ -263,11 +263,11 @@ i {
     margin-top: 1rem;
     padding: 0.5rem;
     background-color: #007BFF;
-    border-radius: 15px;
+    border-radius: 1rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: fixed;
 }
 
 .btn--big {
