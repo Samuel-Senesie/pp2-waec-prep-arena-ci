@@ -28,6 +28,10 @@ body {
     background-color: #007BFF;
 } */
 
+h1 {
+    color: #fff;
+}
+
 h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;

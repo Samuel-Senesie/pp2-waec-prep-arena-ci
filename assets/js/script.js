@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const totalQuestions = questions.length; 
         const correctAnswers = scoreBoard.correct;  
-        const score = ((correctAnswers / totalQuestions) * 100).toFixed(2); //present score as a percentage
+        const score = ((correctAnswers / totalQuestions) * 100).toFixed(0); //present score as a percentage
         
         const name = localStorage.getItem('username');
         const level = 'jss';
