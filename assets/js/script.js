@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const usernameContainer = document.getElementById('username-container');
     const leaderboardButton = document.getElementById('leaderboard-btn');
     const leaderboardSection = document.getElementById('leaderboard-section');
-    /*const leaderboardTable = document.getElementById('leaderboard-table').getElementsByTagName('tbody')[0];*/
     const clearLeaderboard = document.getElementById('clear-leaderboard');
     const backToLevelSelection = document.getElementById('back-to-level-selection');
     const aboutTheGame = document.getElementById('about-the-game');
@@ -297,10 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start test
     startTest.addEventListener('click', () => {
-        if (yearDropdown.value.trim() !== " ") {
+        if (yearDropdown && yearDropdown.value.trim() !== "") {
             if (validateUsername()) {
-                const level = 'jss';
-                const subject = 'Language Arts';
+                const level = 'jss'; 
+                const subject = 'Language Arts'; 
                 const year = yearDropdown.value;
     
                 questions = questionBank[level][subject][year];
@@ -319,11 +318,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             alert('Please select a year to proceed.');
         }
-    });
+    }); 
+
 
     // Update leaderboard section
     function updateLeaderboardSection() {
-        const leaderboardTable = document.getElementById('leaderboards-results');
+        const leaderboardTable = document.getElementById('leaderboard-results');
         leaderboardTable.innerHTML = '';
         leaderboardData.forEach((entry, index) => {
             const row = leaderboardTable.insertRow(index);
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nameCell.textContent = entry.name;
             levelCell.textContent = entry.level;
             subjectCell.textContent = entry.subject;
-            scoreCell.textContent = entry.score;
+            scoreCell.textContent = entry.score + "%"; // 
         });
     }
 
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Save leaderboard data to local storage
     function addScoreToLeaderBoard(name, level, subject, score) {
-        leaderboardData.push({name, level, subject, score});
+        leaderboardData.push({name, level, subject, score });
         localStorage.setItem('leaderboardData', JSON.stringify(leaderboardData));
         updateLeaderboardSection();
     }
@@ -371,7 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionButtons = optionsContainer.querySelectorAll('.option-btn');
         optionButtons.forEach((btn, index) => {
             btn.innerHTML = `<strong>${optionPrefixes[index]}.</strong> ${currentQuestion.options[index]}`;
-            /*btn.textContent = `${optionPrefixes[index]}. ${currentQuestion.options[index]}`;*/ //currentQuestion.options[index];
             btn.onclick = () => {
                 userAnswers[currentQuestionIndex] = currentQuestion.options[index];
                 checkAnswer(currentQuestion.options[index]);
@@ -506,6 +505,16 @@ document.addEventListener('DOMContentLoaded', () => {
         testSection.style.display = 'none';
         reviewSection.style.display = 'block';
         reviewSection.innerHTML = '';
+
+        const totalQuestions = questions.length; 
+        const correctAnswers = scoreBoard.correct;  
+        const score = ((correctAnswers / totalQuestions) * 100).toFixed(2); //present score as a percentage
+        
+        const name = localStorage.getItem('username');
+        const level = 'jss';
+        const subject = 'Language Arts';
+
+        addScoreToLeaderBoard(name, level, subject, score);
 
         questions.forEach((question, index) => {
             const userAnswer = userAnswers[index] || 'Not Answered';
