@@ -57,7 +57,46 @@ A leaderboard displays each user's total score at the end of the test.
 
 * [Technologies Used](#technologies-used)
 
+---
 
+## User Experience
+This project aims to deliver an interactive front-end website that provides a test game experience, primarily for students preparing for the BECE and WASSCE examinations.
+
+### User Stories
+  * I want to use the website on various devices, including smartphones, tablets, laptops, and desktops.
+  * I want to understand the game rules and instructions before attempting the test.
+  * I want to create a username.
+  * I want to be able to select my preferred level, subject, and the year of the past examination question I wish to try.
+  * I want to track my time and see how much time I have remaining.
+  * I want to keep track of my scores and the remaining questions while playing.
+  * I want to be able to pause and resume the test without losing time.
+  * I want feedback indicating wheather my answeres are correct or incorrect and notifications when I pause or resume the game.
+  * I want to see the review of the questions and the correct answeres at the end of the test.
+  * I want an option to restart the game.
+  * I want to see my score on the leaderboard.
+
+  ---
+
+## Design
+
+### Color Scheme
+Shades of blue were chosen as the primary colors for the website due to their association with confidence and intelegence. The color palette, shown in the image below, was generated using [Coolors](https://coolors.co/) tool.
+
+The colour selection for the main features of the website is as follows:
+  * #003366 was used for the background of the web pages.
+  * #66CCFF was used as the primary colour for the buttons.
+  * #007BFF was applied as the background color for popup windows and the test section.
+  * #FFFFFF was used for the H1 elements and icons.
+  * #000000 was used for H2, H3 and paragraph elements.
+  * #008000 was used for the time bar.
+
+
+![Color Palette](assets/images/color-palette-waec-prep-arena.png)
+
+### Typography
+[Google Fonts](https://fonts.google.com/) was used to find an appropiate font family and generate and import the necessary code. Robot and san-serif fonts were selected as the primary font family for the website due to the readability and professional appearance. 
+
+- ![Robot Font-family](assets/images/roboto-font-family.png)
 
 ## Credits
 

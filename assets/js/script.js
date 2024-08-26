@@ -92,7 +92,7 @@ let isPaused = false;
 let scoreBoard = { correct: 0, wrong: 0, unanswered: 0, remaining: 60 };
 
 
-// Add event listeners
+// Add event listeners for the different buttons and inputs
 document.addEventListener('DOMContentLoaded', () => {
     const startGame = document.getElementById('start-game');
     const usernameInput = document.getElementById('username-input');
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 updateScoreDisplay();
                 displayQuestion();
-                startTimer();
+                /*startTimer();*/
             }
            
         } else {
