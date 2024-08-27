@@ -29,7 +29,6 @@ A leaderboard displays each user's total score at the end of the test.
   * [Wireframes](#wireframes)
   * [Color Sceme](#color-scheme)
   * [Typography](#typograpgy)
-  * [Imagery](#imagery)
 
 * [Feautures](#features)
   * [Current Features](#current-features)
@@ -62,6 +61,8 @@ A leaderboard displays each user's total score at the end of the test.
 ## User Experience
 This project aims to deliver an interactive front-end website that provides a test game experience, primarily for students preparing for the BECE and WASSCE examinations.
 
+---
+
 ### User Stories
   * I want to use the website on various devices, including smartphones, tablets, laptops, and desktops.
   * I want to understand the game rules and instructions before attempting the test.
@@ -78,6 +79,48 @@ This project aims to deliver an interactive front-end website that provides a te
   ---
 
 ## Design
+
+### Wireframes
+[Balsamiq](https://www.balsamiq.com) was used to create the wireframes for this project, covering mobile, tablet, and desktop versions. The final design differs slightly from the wireframes due to changes made during the development stage. Images of the wireframes are included in the attachments.
+ 
+<details><summary>Wireframe for Mobile phones</summary>
+<img src="assets/images/wireframes/wframe-mobile-homepage.png">
+<img src="assets/images/wireframes/wframe-mobile-instructions-popup.png">
+<img src="assets/images/wireframes/wframe-mobile-rules-popuo.png">
+<img src="assets/images/wireframes/wframe-mobile-rules-popup.png">
+<img src="assets/images/wireframes/wframe-mobile-leaderboard.png">
+<img src="assets/images/wireframes/wframe-mobile-level-selection.png">
+<img src="assets/images/wireframes/wframe-mobile-subject-selection.png">
+<img src="assets/images/wireframes/wframe-mobile-start.png">
+<img src="assets/images/wireframes/wframe-mobile-test.png">
+<img src="assets/images/wireframes/wframe-mobile-review-section.png">
+</details>
+
+<details><summary>Wireframe for Tablets</summary>
+<img src="assets/images/wireframes/tablet-wframe-homepage.png">
+<img src="assets/images/wireframes/tablet-wframe-about-game-popup.png">
+<img src="assets/images/wireframes/tablet-wframe-instructions-popup.png">
+<img src="assets/images/wireframes/tablet-wframe-rules-popup.png">
+<img src="assets/images/wireframes/tablet-wframe-leaderboard.png">
+<img src="assets/images/wireframes/tablet-wframe-level-selection.png">
+<img src="assets/images/wireframes/tablet-wframe-subject-selection.png">
+<img src="assets/images/wireframes/tablet-wframe-start.png">
+<img src="assets/images/wireframes/tablet-wframe-test.png">
+<img src="assets/images/wireframes/tablet-review-section.png">
+</details>
+
+<details><summary>Wireframe for Desktops</summary>
+<img src="assets/images/wireframes/desktop-wframe-homepage.png">
+<img src="assets/images/wireframes/desktop-wframe-about-game-popup.png">
+<img src="assets/images/wireframes/desktop-wframe-instructions-popup.png">
+<img src="assets/images/wireframes/desktop-wframe-rules-popup.png">
+<img src="assets/images/wireframes/desktop-wiframe-leaderboard.png">
+<img src="assets/images/wireframes/desktop-wframe-level-selection.png">
+<img src="assets/images/wireframes/desktop-wframe-subject-selection.png">
+<img src="assets/images/wireframes/desktop-wframe-start.png">
+<img src="assets/images/wireframes/desktop-wframe-test.png">
+<img src="assets/images/wireframes/desktop-wframe-review-section.png">
+</details>
 
 ### Color Scheme
 Shades of blue were chosen as the primary colors for the website due to their association with confidence and intelegence. The color palette, shown in the image below, was generated using [Coolors](https://coolors.co/) tool.
@@ -96,7 +139,7 @@ The colour selection for the main features of the website is as follows:
 ### Typography
 [Google Fonts](https://fonts.google.com/) was used to find an appropiate font family and generate and import the necessary code. Robot and san-serif fonts were selected as the primary font family for the website due to the readability and professional appearance. 
 
-- ![Robot Font-family](assets/images/roboto-font-family.png)
+- ![Robot Font-family](assets/images/roboto-fonts.png)
 
 ## Credits
 
