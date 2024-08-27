@@ -210,6 +210,32 @@ At the end of the test, the user’s name, level, subject, and score (in percent
 * Hints to help users select the correct answers.
 * Additional subject options, questions, and year selections.
 
+---
+### Deployment and Local Deployment
+#### Deployment
+To deploy this website on GitHub, the following steps were followed:
+1.	**Log in to GitHub**, navigate to the repository, and click on the **Settings** tab.
+2.	In the **Code and automation** section on the left sidebar, select Pages.
+3.	Set the **Source** to **Deploy** from **Branch**, choose the **Main branch**, set the **Folder** to **root**, and click **Save**.
+4.	Return to the **Code** tab and refresh the repository after waiting a few minutes.
+5.	Under the **Environments** section on the right-hand side, click on **github-pages**.
+6.	View the live site and URL by clicking **View deployment**.
+
+The deployed page can be accessed [here](https://samuel-senesie.github.io/pp2-waec-prep-arena-ci/game.html)
+
+---
+#### Local Deployment
+**How to Fork**
+To fork this repository, follow these steps:
+1.	Log in to GitHub and navigate to the repository: https://samuel-senesie.github.io/pp2-waec-prep-arena-ci/game.html.
+2.	Click the **Fork** button at the top right-hand corner of the page.
+
+**How to Clone**
+To clone this repository, use the following steps:
+1.	On **GitHub**, go to the repository page: https://samuel-senesie.github.io/pp2-waec-prep-arena-ci/game.html.
+2.	Click the **Code** button and choose your preferred method to clone the repository. Copy the displayed link.
+3.	Open your code editor and access the terminal. Change the current working directory to the location where you want to clone the repository.
+4.	In the terminal, type **git clone**, paste the copied link, and press Enter.
 
 
 
