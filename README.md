@@ -29,10 +29,11 @@ A leaderboard displays each user's total score at the end of the test.
   * [Wireframes](#wireframes)
   * [Color Sceme](#color-scheme)
   * [Typography](#typograpgy)
+  * [Imagery](#imagery)
 
 * [Feautures](#features)
   * [Current Features](#current-features)
-    * [Generla Features](#general-features)
+    * [Home Page](#home-page)
     * [Test Page](#test-page)
   * [Future Features](#future-features) 
 
@@ -140,6 +141,84 @@ The colour selection for the main features of the website is as follows:
 [Google Fonts](https://fonts.google.com/) was used to find an appropiate font family and generate and import the necessary code. Robot and san-serif fonts were selected as the primary font family for the website due to the readability and professional appearance. 
 
 - ![Robot Font-family](assets/images/roboto-fonts.png)
+---
+### Imagery
+Canva was used to generate the logo featured on the background image of the homepage. The book and graduation cap in the logo symbolize education and success.
+
+---
+## Features
+### Current features
+The website, which includes a visible favicon, consists of two main pages: `index.html` (Home page) and `game.html` (Test page). Both pages feature the logo as the background image, with an overlay to dim the background when pop-up windows or other dynamic features are displayed.
+
+### Home page
+
+The Home page features two buttons—“About Game” and “Let’s Go!”—with the logo as the background image. The “Let’s Go!” button navigates users to the test section. When clicked, the “About Game” button opens a pop-up window containing three buttons: one for the “Instructions” pop-up, one for the “Game Rules” pop-up, and one to close the pop-up window.
+
+* Home
+![Background image with logo](assets/images/features/background-image.png)
+![Home Page](assets/images/features/home-page.png)
+![About Game Popup Window](assets/images/features/about-game-popup-window.png)
+![Instruction Popup](assets/images/features/instructions-popup-window.png)
+![Game Rules](assets/images/features/rules-popup-window.png)
+
+### Test Page
+#### Username and Level Selection Section
+To navigate to the test page, users click on the “Let’s Go!” button, which takes them to the section where they can enter a username and select a level. Users are only allowed to select a level after creating a username. Once a username is created and a level is selected, users can proceed to the subject selection section, which is loaded dynamically.
+
+![Username and Level Selection Section](assets/images/features/level-selection.png)
+
+#### Subject Selection
+Each level offers four subject options, and users can only select one subject at a time. After selecting a subject, users can navigate to the start page.
+
+![Subject Selection Section](assets/images/features/subject-selection.png)
+
+
+#### Select Year and Start Test
+The start button on the start page is only functional after the user has selected the year of the past paper they wish to try from the dropdown menu.
+
+![Start Test Section](assets/images/features/start-test-section.png)
+
+#### Test display Section
+
+* This section displays the test question with four answer options, a progress (timer) bar, in-page notifications, a score tracker, a next button, and pause and resume buttons.
+
+* The question page with four answer options is displayed after clicking the start button. This page also features a timer bar and a score display section. Users are required to spend no more than 1 minute per question. The timer starts once the question is displayed. The timer bar, located just below the answers, is green and full at 60 seconds, turns orange and half-full at 30 seconds, and turns red when there are 10 seconds remaining.
+
+*	During the test, users can pause and resume the game at will. When the game is paused, the questions and answer options are hidden, and the timer stops. The questions and answer options are displayed again when the user resumes, and the timer will continue running.
+
+* Users receive notifications such as “Correct!” for correct answers, “Try again later!” for incorrect answers, “Do you want to come back later?” for skipped questions, and “Test completed” at the end of the test. Users are also informed when they click the pause or resume buttons.
+
+* The score tracker is displayed at the bottom of the page, showing the count of correct, incorrect, and unanswered questions, as well as the number of questions remaining.
+
+![Test questions](assets/images/features/test-questions.png)
+
+
+![Test questions](assets/images/features/test-paused.png)
+
+#### Test Review Section
+At the end of the test, the review section will display all the questions, showing the user’s selected answers and the correct answers. A restart button is located at the bottom of the page, which users can use to navigate back to the level selection area and restart the test.
+
+![Test Review Section](assets/images/features/review-section.png)
+
+#### Leaderboard
+
+At the end of the test, the user’s name, level, subject, and score (in percentage) are displayed on the leaderboard.
+![Leaderboard](assets/images/features/leaderboard-section.png)
+
+### Future Features
+* A signup and login option for users.
+* Hints to help users select the correct answers.
+* Additional subject options, questions, and year selections.
+
+
+
+
+
+
+
+
+
+
 
 ## Credits
 
