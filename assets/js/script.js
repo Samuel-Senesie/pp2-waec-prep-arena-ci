@@ -618,7 +618,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Start test latest update
-    startTest.addEventListener('click', () => {
+    if (startTest) {
+        startTest.addEventListener('click', () => {
+            if (yearDropdown && yearDropdown.value.trim() !== "") {
+                if (validateUsername()) {
+                    const level = localStorage.getItem('selectedLevel');
+                    const subject = localStorage.getItem('selectedSubject');
+                    const year = yearDropdown.value;
+
+                    console.log(`Selected Level: ${level}`)
+                    console.log(`Selected Subject: ${subject}`)
+                    console.log(`Selected Year: ${year}`)
+
+                    if (level && subject && year) {
+                        questions = questionBank[level][subject][year];
+
+                        if (questions && questions.length > 0) {
+                            scoreBoard.remaining = questions.length;
+                            userAnswers = [];
+                            currentQuestionIndex = 0;
+
+                            yearSelection.style.display = 'none';
+                            testSection.style.display = 'block';
+
+                            updateScoreDisplay();
+                            displayQuestion();
+                        } else {
+                            alert('No questions found');
+                        }
+                    }
+                } else {
+                    alert('Please ensure a level and subject is selected');
+                }
+            } else {
+                alert('Please select year to proceed.');
+            }
+        })
+    }
+
+
+    /*startTest.addEventListener('click', () => {
         if (yearDropdown && yearDropdown.value.trim() !== "") {
             if (validateUsername()) {
                 const level = localStorage.getItem('selectedLevel');
@@ -652,7 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else{
             alert('Please select year to proceed.')
         }
-    }); 
+    }); */
 
 
     // Update leaderboard section
@@ -775,7 +814,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load next question
-    nextQuestion.addEventListener('click', () => {
+    /*nextQuestion.addEventListener('click', () => {
         userAnswers[currentQuestionIndex] = 'Skipped';
         checkAnswer('skipped');
         scoreBoard.unanswered++;
@@ -789,23 +828,61 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timeInterval);
             displayReview();
         }
-    });
+    }); */
+
+    if (nextQuestion) {
+        nextQuestion.addEventListener('click', () => {
+            userAnswers[currentQuestionIndex] = 'Skipped';
+            checkAnswer('skipped');
+            scoreBoard.unanswered++;
+            scoreBoard.remaining--;
+            updateScoreDisplay();
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                showNotification('info', 'Test completed!');
+                clearInterval(timeInterval);
+                displayReview();
+            }
+        });
+    }
 
     // Pause test
-    pause.addEventListener('click', () => {
+    /*pause.addEventListener('click', () => {
         isPaused = true;
         questionContainer.style.display = 'none';
         optionsContainer.style.display = 'none';
         showNotification('info', 'You paused test');
-    });
+    });*/
+
+    if (pause) {
+        pause.addEventListener('click', () => {
+            isPaused = true;
+            questionContainer.style.display = 'none';
+            optionsContainer.style.display = 'none';
+            showNotification('info', 'You paused test');
+        });
+    }
 
     // Resume test
-    resume.addEventListener('click', () => {
+    /*resume.addEventListener('click', () => {
         isPaused = false;
         questionContainer.style.display = 'block';
         optionsContainer.style.display = 'flex';
         showNotification('info', 'You resumed test.');
-    });
+    }); */
+
+    if (resume) {
+        resume.addEventListener('click', () => {
+            isPaused = false;
+            questionContainer.style.display = 'block';
+            optionsContainer.style.display = 'flex';
+            showNotification('info', 'You resumed test.');
+        });
+    }
+
+
 
     // Start timer
     function startTimer() {

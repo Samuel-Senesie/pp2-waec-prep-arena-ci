@@ -41,7 +41,7 @@ h2 {
     align-items: center;
     gap: 1.25rem;
     position: fixed;
-    bottom: 10rem;
+    bottom: 8rem;
     left: 50%;
     transform: translate(-50%);
 }
