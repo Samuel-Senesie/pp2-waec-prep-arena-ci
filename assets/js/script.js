@@ -655,23 +655,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }); 
 
 
-    // Load questions based on selctions
-
-    /*function loadQuestions() {
-        const level = localStorage.getItem('selectedLevel');
-        const subject = localStorage.getItem('selectedSubject');
-        const year = localStorage.getItem('selectedYear');
-
-        if (level && subject && year){
-            questions = questionBank[level][subject][year] || [];
-            currentQuestionIndex = 0;
-            scoreBoard = {correct: 0, wrong: 0, unanswered: 0, remaining: questions.length };
-        } else {
-            alert("Incomplete selection. Please selecte a level, subject and year.")
-        }
-    } */
-
-
     // Update leaderboard section
     function updateLeaderboardSection() {
         const leaderboardTable = document.getElementById('leaderboard-results');
@@ -842,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (timeLeft <= 0) {
                     clearInterval(timeInterval);
-                    alert('Time is up!');
+                    showNotification('warning', 'Time is up!');
                     checkAnswer(null);
                 }
             }

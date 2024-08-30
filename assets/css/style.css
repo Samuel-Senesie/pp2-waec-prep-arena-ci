@@ -40,7 +40,10 @@ h2 {
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-    margin-top: 20rem;
+    position: fixed;
+    bottom: 10rem;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 
@@ -183,7 +186,7 @@ i {
 }
 
 #about-game {
-    height: 60vh;
+    height: 70vh;
 }
 
 /*  Popup containers for Instructions and Rules */
@@ -213,12 +216,12 @@ i {
     height: 90vh;
 } */
 
-#game-rules-popup {
+/*#game-rules-popup {
     width: 90%;
     height: 90vh;
     justify-content: space-between;
 
-}
+} */
 
 .popup-content > h2 {
     text-transform: uppercase;
@@ -538,6 +541,13 @@ i {
 
     #start-game {
         margin-top: 15rem;
+    }
+
+    #game-rules-popup {
+        width: 90%;
+        height: 70vh;
+        justify-content: space-between;
+    
     }
     
 }
