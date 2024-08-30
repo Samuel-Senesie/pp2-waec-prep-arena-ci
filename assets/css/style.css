@@ -383,13 +383,16 @@ i {
     font-size: 1.2rem;
     justify-content: left;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, width 0.3s;
+    /*transition: background-color 0.3s, color 0.3s, width 0.3s;*/
+    transition: all 0.2s ease;
+    flex-grow: 1;
 }
 
-.option-btn:active {
+.option-btn:active
+.option-btn:focus {
     background-color: black;
     color: white;
-    width: 105%;
+    transform: scale(1.05);
 }
 
 /*.option-btn::before{
@@ -484,7 +487,8 @@ i {
     position: fixed;
     top: 1rem;
     right: 8rem;
-    left: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60%;
     z-index: 1001;
 }
