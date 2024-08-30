@@ -75,6 +75,280 @@ const questionBank = {
                 }
 
             ]
+        },
+        "Mathematics": {
+            "2019": [{
+                    "question": "What is the value of π (pi) to two decimal places?",
+                    "options": ["3.12", "3.14", "3.15", "3.16"],
+                    "correctAnswer": "3.14"
+                },
+                {
+                    "question": "What is 12 x 8?",
+                    "options": ["96", "98", "100", "102"],
+                    "correctAnswer": "96"
+                },
+                {
+                    "question": "If a triangle has two equal sides, what type of triangle is it?",
+                    "options": ["Equilateral", "Isosceles", "Scalene", "Right"],
+                    "correctAnswer": "Isosceles"
+                },
+                {
+                    "question": "What is the square root of 81?",
+                    "options": ["7", "8", "9", "10"],
+                    "correctAnswer": "9"
+                },
+                {
+                    "question": "What is the sum of angles in a triangle?",
+                    "options": ["90 degrees", "180 degrees", "360 degrees", "270 degrees"],
+                    "correctAnswer": "180 degrees"
+                }
+            ]
+        },
+        "Integrated Science": {
+            "2019": [{
+                    "question": "What is the process by which plants make their own food using sunlight?",
+                    "options": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"],
+                    "correctAnswer": "Photosynthesis"
+                },
+                {
+                    "question": "Which of the following is a renewable source of energy?",
+                    "options": ["Coal", "Natural Gas", "Solar Power", "Oil"],
+                    "correctAnswer": "Solar Power"
+                },
+                {
+                    "question": "What is the boiling point of water at sea level?",
+                    "options": ["50°C", "100°C", "150°C", "200°C"],
+                    "correctAnswer": "100°C"
+                },
+                {
+                    "question": "Which gas is essential for humans to breathe?",
+                    "options": ["Carbon Dioxide", "Oxygen", "Nitrogen", "Helium"],
+                    "correctAnswer": "Oxygen"
+                },
+                {
+                    "question": "Which part of the plant is primarily responsible for photosynthesis?",
+                    "options": ["Root", "Stem", "Leaf", "Flower"],
+                    "correctAnswer": "Leaf"
+                },
+            ]
+
+        },
+        "Social Studies": {
+            "2019": [{
+                    "question": "Which of the following is a primary function of the family?",
+                    "options": ["To educate children", "To provide national defense", "To build roads", "To govern the country"],
+                    "correctAnswer": "To educate children"
+                },
+                {
+                    "question": "What is the capital city of Ghana?",
+                    "options": ["Kumasi", "Accra", "Tamale", "Takoradi"],
+                    "correctAnswer": "Accra"
+                },
+                {
+                    "question": "Which of the following is considered a civic responsibility?",
+                    "options": ["Paying taxes", "Watching television", "Playing sports", "Eating breakfast"],
+                    "correctAnswer": "Paying taxes"
+                },
+                {
+                    "question": "Which organ of government is responsible for making laws?",
+                    "options": ["Executive", "Judiciary", "Parliament", "Police"],
+                    "correctAnswer": "Parliament"
+                },
+                {
+                    "question": "What is the significance of Independence Day in many countries?",
+                    "options": ["It marks the day a new government is elected", "It celebrates the country's freedom from colonial rule", "It is the start of the new school year", "It is a day to honor sports heroes"],
+                    "correctAnswer": "It celebrates the country's freedom from colonial rule"
+                }
+            ]
+        }
+    },
+    "sss": {
+        "Maths": {
+            "2019": [{
+                    "question": "What is the solution to the equation 2x - 3 = 7?",
+                    "options": ["x = 2", "x = 5", "x = -2", "x = -5"],
+                    "correctAnswer": "x = 5"
+                },
+                {
+                    "question": "If a triangle has sides of length 5 cm, 12 cm, and 13 cm, what type of triangle is it?",
+                    "options": ["Equilateral", "Isosceles", "Right-angled", "Scalene"],
+                    "correctAnswer": "Right-angled"
+                },
+                {
+                    "question": "What is the value of the expression 3^2 + 4^2?",
+                    "options": ["12", "18", "25", "30"],
+                    "correctAnswer": "25"
+                },
+                {
+                    "question": "A circle has a radius of 7 cm. What is its circumference? (Use π = 22/7)",
+                    "options": ["14 cm", "22 cm", "44 cm", "28 cm"],
+                    "correctAnswer": "44 cm"
+                },
+                {
+                    "question": "Solve for y: 3y + 4 = 19",
+                    "options": ["y = 3", "y = 5", "y = 7", "y = 15"],
+                    "correctAnswer": "y = 5"
+                }
+            ]
+        },
+        "English": {
+            "2019": [{
+                    "question": "Which of the following sentences is grammatically correct?",
+                    "options": [
+                        "Neither of the boys are going to the party.",
+                        "Neither of the boys is going to the party.",
+                        "Neither of the boy are going to the party.",
+                        "Neither of the boy is going to the party."
+                    ],
+                    "correctAnswer": "Neither of the boys is going to the party."
+                },
+                {
+                    "question": "Choose the correct form of the verb: She _____ to the gym every morning.",
+                    "options": [
+                        "go",
+                        "gone",
+                        "going",
+                        "goes"
+                    ],
+                    "correctAnswer": "goes"
+                },
+                {
+                    "question": "Which sentence uses the passive voice?",
+                    "options": [
+                        "The chef cooked a delicious meal.",
+                        "The meal was cooked by the chef.",
+                        "The chef is cooking a meal.",
+                        "The chef will cook a meal."
+                    ],
+                    "correctAnswer": "The meal was cooked by the chef."
+                },
+                {
+                    "question": "Identify the adjective in this sentence: 'The beautiful flowers bloom in spring.'",
+                    "options": [
+                        "flowers",
+                        "bloom",
+                        "beautiful",
+                        "spring"
+                    ],
+                    "correctAnswer": "beautiful"
+                },
+                {
+                    "question": "Select the word that best completes the sentence: 'If I _____ you, I would study harder.'",
+                    "options": [
+                        "was",
+                        "were",
+                        "am",
+                        "be"
+                    ],
+                    "correctAnswer": "were"
+                }
+            ]
+        },
+        "History": {
+            "2019": [{
+                    "question": "Who was the first President of Ghana after its independence from Britain?",
+                    "options": [
+                        "Kwame Nkrumah",
+                        "J.B. Danquah",
+                        "Kofi Busia",
+                        "Flt. Lt. Jerry John Rawlings"
+                    ],
+                    "correctAnswer": "Kwame Nkrumah"
+                },
+                {
+                    "question": "Which war was fought between 1914 and 1918 and is often referred to as the 'Great War'?",
+                    "options": [
+                        "World War I",
+                        "World War II",
+                        "The Korean War",
+                        "The Vietnam War"
+                    ],
+                    "correctAnswer": "World War I"
+                },
+                {
+                    "question": "What was the main cause of the American Civil War?",
+                    "options": [
+                        "Taxation without representation",
+                        "Slavery",
+                        "Expansion of the frontier",
+                        "The Boston Tea Party"
+                    ],
+                    "correctAnswer": "Slavery"
+                },
+                {
+                    "question": "Which ancient civilization is known for its development of the first writing system called cuneiform?",
+                    "options": [
+                        "The Egyptians",
+                        "The Greeks",
+                        "The Sumerians",
+                        "The Romans"
+                    ],
+                    "correctAnswer": "The Sumerians"
+                },
+                {
+                    "question": "In which year did the Berlin Wall fall, marking the beginning of the end of the Cold War?",
+                    "options": [
+                        "1987",
+                        "1988",
+                        "1989",
+                        "1990"
+                    ],
+                    "correctAnswer": "1989"
+                }
+            ]
+        },
+        "Government": {
+            "2019": [{
+                    "question": "Which branch of government is responsible for enforcing laws?",
+                    "options": [
+                        "Legislative",
+                        "Judicial",
+                        "Executive",
+                        "Administrative"
+                    ],
+                    "correctAnswer": "Executive"
+                },
+                {
+                    "question": "What is the primary function of the legislature in a democratic government?",
+                    "options": [
+                        "Enforce laws",
+                        "Interpret laws",
+                        "Create laws",
+                        "Execute laws"
+                    ],
+                    "correctAnswer": "Create laws"
+                },
+                {
+                    "question": "Which document outlines the fundamental principles and structures of a government?",
+                    "options": [
+                        "Constitution",
+                        "Bill of Rights",
+                        "Statute",
+                        "Executive Order"
+                    ],
+                    "correctAnswer": "Constitution"
+                },
+                {
+                    "question": "In a federal system of government, which level of government typically handles education policy?",
+                    "options": [
+                        "Federal",
+                        "State",
+                        "Local",
+                        "National"
+                    ],
+                    "correctAnswer": "State"
+                },
+                {
+                    "question": "Who is the head of state in a parliamentary democracy?",
+                    "options": [
+                        "Prime Minister",
+                        "President",
+                        "King/Queen",
+                        "Chancellor"
+                    ],
+                    "correctAnswer": "Prime Minister"
+                }
+            ]
         }
     }
 
@@ -89,7 +363,20 @@ let timeInterval;
 let userAnswers = []; //string to store user's answers for review
 let timeLeft = 60;
 let isPaused = false;
-let scoreBoard = { correct: 0, wrong: 0, unanswered: 0, remaining: 60 };
+let selectedLevel = '';
+let selectedSubject = '';
+let selectedYear = '';
+let scoreBoard = {
+    correct: 0,
+    wrong: 0,
+    unanswered: 0,
+    remaining: 60
+};
+
+const savedLeaderboardData = localStorage.getItem('leaderboardData');
+if (savedLeaderboardData) {
+    leaderboardData = JSON.parse(savedLeaderboardData);
+}
 
 
 // Add event listeners for the different buttons and inputs
@@ -111,6 +398,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const levelSelection = document.getElementById('level-selection');
     const jssLevel = document.getElementById('jss-level');
     const sssLevel = document.getElementById('sss-level');
+    const subjectButtons = document.querySelectorAll('.subject-btn');
+    const backToSubjects = document.getElementById('back-to-subjects');
+    const selectedSubjectText = document.getElementById('selected-subject');
+    const startTest = document.getElementById('start-test');
     const subjectSelectionJss = document.getElementById('subject-selection-jss');
     const subjectSelectionSss = document.getElementById('subject-selection-sss');
     const backJss = document.getElementById('back-jss');
@@ -126,11 +417,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const pause = document.getElementById('pause');
     const resume = document.getElementById('resume');
     const reviewSection = document.getElementById('review-section');
-    const subjectButtons = document.querySelectorAll('.subject-btn');
-    const backToSubjects = document.getElementById('back-to-subjects');
-    const selectedSubjectText = document.getElementById('selected-subject');
-    const startTest = document.getElementById('start-test');
     
+
 
 
     // To navigate to test page
@@ -141,9 +429,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Username input with event listener for real-time storage of username
     if (usernameInput) {
         usernameInput.addEventListener('input', (e) => {
             const username = e.target.value.trim();
+            // Save trimmed username to localStorage
             if (username !== '') {
                 localStorage.setItem('username', username);
             }
@@ -168,7 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Clear leaderboard
-
     if (clearLeaderboard) {
         clearLeaderboard.addEventListener('click', () => {
             leaderboardData = [];
@@ -228,36 +517,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // JSS Level Selection
     if (jssLevel) {
         jssLevel.addEventListener('click', () => {
-            if (validateUsername ()) {
+            if (validateUsername()) {
+                selectedLevel = 'jss';
+                localStorage.setItem('selectedLevel', selectedLevel) /*New*/
                 levelSelection.style.display = 'none';
-                subjectSelectionJss.style.display = 'flex';
+                document.getElementById('subject-selection-jss').style.display = 'flex';
             }
-            
+
         });
     }
 
+    //SSS Level Selection
     if (sssLevel) {
         sssLevel.addEventListener('click', () => {
-            if (validateUsername ()) {
+            if (validateUsername()) {
+                selectedLevel = 'sss';
+                localStorage.setItem('selectedLevel', selectedLevel); /* New */
                 levelSelection.style.display = 'none';
-                subjectSelectionSss.style.display = 'flex';
+                document.getElementById('subject-selection-sss').style.display = 'flex';
             }
         });
     }
 
-    // Validate username 
-    function validateUsername() {
-        const usernameInput = document.getElementById('username-input').value.trim();
-        if (usernameInput === '') {
-            alert('Please enter username to proceed');
-            return false;        
-        }
-        localStorage.setItem('username', usernameInput)
-        return true;
-    }
-
+    //Back to Level Selection from JSS
     if (backJss) {
         backJss.addEventListener('click', () => {
             subjectSelectionJss.style.display = 'none';
@@ -265,6 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Back to Level Selection from SSS
     if (backSss) {
         backSss.addEventListener('click', () => {
             subjectSelectionSss.style.display = 'none';
@@ -272,20 +559,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Display year selection dropdown
-    subjectButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+    // Validate username to retrive trimmed username value from input field
+    function validateUsername() {
+        // Get trimmed value directly from input field
+        const usernameInputValue = document.getElementById('username-input').value.trim();
+        // Check if trimmed username is empty
+        if (usernameInputValue === '') {
+            alert('Please enter username to proceed');
+            return false;
+        }
+        // Save the valid username to localStorage    
+        localStorage.setItem('username', usernameInputValue)
+        return true;
+    } 
+
+
+    // Select subject
+    // Iterate over each button in the subject button array
+    subjectButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const selectedSubject = event.target.closest('.subject-btn').dataset.subject;
+            localStorage.setItem('selectedSubject', selectedSubject);
+
+            console.log(`Set Subject to localStorage: ${selectedSubject}`)
+            console.log(`Stored in localStorage: ${localStorage.getItem('selectedSubject')}`);
+
             subjectSelectionJss.style.display = 'none';
             subjectSelectionSss.style.display = 'none';
-            yearSelection.style.display = 'block';
+            yearSelection.style.display = 'flex';
+
+            
+
         });
     });
+    console.log(`Retrieved Subject from localStorage: ${localStorage.getItem('selectedSubject')}`);
 
     // Back to subject selection from year selection
+
     if (backToSubjects) {
         backToSubjects.addEventListener('click', () => {
             yearSelection.style.display = 'none';
-            if (subjectSelectionJss.style.display === 'none') {
+            if (localStorage.getItem('selectedLevel') === 'sss') /*(subjectSelectionJss.style.display === 'none')*/ {
                 subjectSelectionSss.style.display = 'flex';
             } else {
                 subjectSelectionJss.style.display = 'flex';
@@ -293,32 +607,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //Year selection dropdown
+    if (yearDropdown) {
+        yearDropdown.addEventListener('change', () => {
+            const selectedYear = yearDropdown.value;
+            // store selected year to localStorage under the key 'selectedYear'
+            localStorage.setItem('selectedYear', selectedYear);
+        });
+    }
 
-    // Start test
+
+    // Start test latest update
     startTest.addEventListener('click', () => {
         if (yearDropdown && yearDropdown.value.trim() !== "") {
             if (validateUsername()) {
-                const level = 'jss'; 
-                const subject = 'Language Arts'; 
+                const level = localStorage.getItem('selectedLevel');
+                const subject = localStorage.getItem('selectedSubject');
                 const year = yearDropdown.value;
-    
-                questions = questionBank[level][subject][year];
-                scoreBoard.remaining = questions.length;
-                userAnswers = [];
-                currentQuestionIndex = 0;
-    
-                yearSelection.style.display = 'none';
-                testSection.style.display = 'block';
-    
-                updateScoreDisplay();
-                displayQuestion();
-                /*startTimer();*/
+
+                console.log(`Selected Level: ${level}`)
+                console.log(`Selected Subject: ${subject}`)
+                console.log(`Selected Year: ${year}`)
+
+                if (level && subject && year) {
+                    questions = questionBank[level][subject][year];
+
+                    if (questions && questions.length > 0) {
+                        scoreBoard.remaining = questions.length;
+                        userAnswers = [];
+                        currentQuestionIndex = 0;
+
+                        yearSelection.style.display = 'none';
+                        testSection.style.display = 'block';
+
+                        updateScoreDisplay();
+                        displayQuestion();
+                    } else {
+                        alert('No questions found')
+                    }
+                } else {
+                    alert ('Please ensure a level and subject is selected')
+                }
             }
-           
-        } else {
-            alert('Please select a year to proceed.');
+        } else{
+            alert('Please select year to proceed.')
         }
     }); 
+
+
+    // Load questions based on selctions
+
+    /*function loadQuestions() {
+        const level = localStorage.getItem('selectedLevel');
+        const subject = localStorage.getItem('selectedSubject');
+        const year = localStorage.getItem('selectedYear');
+
+        if (level && subject && year){
+            questions = questionBank[level][subject][year] || [];
+            currentQuestionIndex = 0;
+            scoreBoard = {correct: 0, wrong: 0, unanswered: 0, remaining: questions.length };
+        } else {
+            alert("Incomplete selection. Please selecte a level, subject and year.")
+        }
+    } */
 
 
     // Update leaderboard section
@@ -327,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
         leaderboardTable.innerHTML = '';
         leaderboardData.forEach((entry, index) => {
             const row = leaderboardTable.insertRow(index);
-            const nameCell =row.insertCell(0);
+            const nameCell = row.insertCell(0);
             const levelCell = row.insertCell(1);
             const subjectCell = row.insertCell(2);
             const scoreCell = row.insertCell(3);
@@ -342,11 +693,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add score to leaderboard
     const savedLeaderboardData = localStorage.getItem('leaderboardData');
     if (savedLeaderboardData) {
-        leaderboardData =JSON.parse(savedLeaderboardData);
+        leaderboardData = JSON.parse(savedLeaderboardData);
     }
     // Save leaderboard data to local storage
     function addScoreToLeaderBoard(name, level, subject, score) {
-        leaderboardData.push({name, level, subject, score });
+        leaderboardData.push({
+            name,
+            level,
+            subject,
+            score
+        });
         localStorage.setItem('leaderboardData', JSON.stringify(leaderboardData));
         updateLeaderboardSection();
     }
@@ -443,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreBoard.remaining--;
         updateScoreDisplay();
         currentQuestionIndex++;
-        if(currentQuestionIndex < questions.length) {
+        if (currentQuestionIndex < questions.length) {
             displayQuestion();
         } else {
             showNotification('info', 'Test completed!');
@@ -483,7 +839,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     timerBar.style.backgroundColor = 'green';
                 }
-                
+
                 if (timeLeft <= 0) {
                     clearInterval(timeInterval);
                     alert('Time is up!');
@@ -492,7 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 1000);
     }
-    
+
     // Reset timer
     function resetTimer() {
         clearInterval(timeInterval);
@@ -506,13 +862,21 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewSection.style.display = 'block';
         reviewSection.innerHTML = '';
 
-        const totalQuestions = questions.length; 
-        const correctAnswers = scoreBoard.correct;  
+        // Retrieve the selected subject and year from localStorage
+        const selectedSubject = localStorage.getItem('selectedSubject');
+        const selectedYear = localStorage.getItem('selectedYear');
+
+        const headerHTML = `<h2>Review: ${selectedSubject} - Year ${selectedYear}</h2>`;
+        reviewSection.innerHTML += headerHTML;
+
+        const totalQuestions = questions.length;
+        const correctAnswers = scoreBoard.correct;
         const score = ((correctAnswers / totalQuestions) * 100).toFixed(0); //present score as a percentage
-        
+
+        // Get selected level and subject from localStorage to display on leaderboard
         const name = localStorage.getItem('username');
-        const level = 'jss';
-        const subject = 'Language Arts';
+        const level = localStorage.getItem('selectedLevel');
+        const subject = localStorage.getItem('selectedSubject');
 
         addScoreToLeaderBoard(name, level, subject, score);
 
@@ -521,7 +885,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const correctAnswer = question.correctAnswer;
 
             const answerColor = userAnswer === 'Not Answered' || userAnswer === 'Skipped' ? 'orange' : userAnswer === correctAnswer ? 'green' : 'red';
-            
+
             const questionHTML = `<div class="review-question">
             <p><strong>Q${index + 1}:</strong> ${question.question}</p>
             <p><strong>Your Answer:</strong> <span style="color: ${answerColor}">${userAnswer}</span></p>
@@ -537,4 +901,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-

@@ -237,6 +237,39 @@ To clone this repository, use the following steps:
 3.	Open your code editor and access the terminal. Change the current working directory to the location where you want to clone the repository.
 4.	In the terminal, type **git clone**, paste the copied link, and press Enter.
 
+## Validation
+### HTML Validation
+
+**Home Page**
+* Error: Attribute ‘href’ not allowed on element button at this point (from line 31, column 17 to line 31, column 57).
+* Solution: The ‘href’ attribute was removed, resolving the issue.
+
+![Home page](assets/images/validation/homepage-error-meaasage.png)
+![Home page](assets/images/validation/homepage-error-correction.png)
+
+**Game Page**
+
+* Error: Attribute ‘href’ not allowed on element button at this point (from line 41, column 13 to line 41, column 62).
+* Solution: The ‘href’ attribute was removed, resolving the issue.
+* Warning: Possible issue with ‘aria-label’ (from line 90, column 9 to line 90, column 81).
+* Solution: The ‘aria-label’ attribute was removed, resolving the issue.
+* Warning: The button role is unnecessary for the element (from line 120, column 17 to line 120, column 68).
+* Solution: The button role was removed, resolving the issue.
+* Warning: The button role is unnecessary for the element (from line 121, column 17 to line 121, column 70).
+* Solution: The button role was removed, resolving the issue.
+![Game page](assets/images/validation/game-page-error-message.png)
+![Game page](assets/images/validation/game%20page%20error%20correction.png)
+
+---
+### CSS Validation
+When the code was run through the W3C CSS Validator, the test returned two error messages, as shown in the image. The following steps were taken to correct the issues:
+* Error 1: #leaderboard-section (line 129): Value error due to an incorrect operator (0, auto).
+Solution: The comma was removed, resolving the issue.
+* Error 2: .notification (line 477): Value error due to an incorrect operator (0, auto).
+Solution: The comma was removed, resolving the issue.
+
+[Error Message](assets/images/validation/css-error-message.png)
+![Correction](assets/images/validation/css-error-correction.png)
 
 
 
@@ -249,6 +282,14 @@ To clone this repository, use the following steps:
 ## Credits
 
 * The popup menu was learnt ad adapted from the YouTube Tutorial of [Codingflag](https://youtu.be/iE_6pQ3RlZU?si=6_qy3F1wWourONax)
+
+* Fonts: Sourced and imported from Google Fonts.
+* Icons: Sourced from Font Awesome.
+* * Logo and Background Image: Created using Canva.
+* Color Palette: Generated using the Coolors tool.
+* JavaScript Code for Font Awesome Kit: Imported from Font Awesome.
+* ChatGPT: Utilized to generate questions for the question bank (excluding JSS level English questions), edit the content of the README document, debug JavaScript code, and serve as a reference and learning guide for the project.
+* Website Inspiration and Design: Based on the Love Maths Walkthrough Project from the Code Institute's Full Stack Software Development Diploma Course
 
 
 

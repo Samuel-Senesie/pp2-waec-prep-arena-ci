@@ -24,9 +24,6 @@ body {
     margin-top: 1.25rem;
 }
 
-/*#game-container {
-    background-color: #007BFF;
-} */
 
 h1 {
     color: #fff;
@@ -113,7 +110,7 @@ i {
     letter-spacing: 2px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
-    background-color: lightgrey;
+    background-color: #EDEDED;
     color: black;
     font-weight: bold;
 }
@@ -126,7 +123,7 @@ i {
     width: 90%;
     height: 80vh;
     box-sizing: border-box;
-    margin: 0, auto;
+    margin: 0 auto;
     background: #007BFF;
     top: 50%;
     left: 50%;
@@ -173,7 +170,6 @@ i {
     font-weight: 900;
     border-radius: 0.6rem;
     padding: 1.2rem;
-    /*margin-left: 50px; */
     top: 50%;
     left: 50%;
     gap: 2rem;
@@ -272,7 +268,7 @@ i {
     position: fixed;
 }
 
-.btn--big {
+.subject-btn {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -286,19 +282,19 @@ i {
     gap: 1.7rem;
 }
 
-.btn--big::after{
+.subject-btn::after{
     content: attr(data-subject);
     font-size: 1rem;
     position: relative;
     text-align: center;
 }
 
-.btn--big i{
+.subject-btn i{
     font-size: 2.5rem;
     color: greenyellow;
 }
 
-/* Year Selection  Dropdown */
+/* Year Selection */
 
 #year-selection {
     display: flex;
@@ -313,16 +309,19 @@ i {
     position: absolute;
     background-color: #007BFF;
     border-radius: 2.5rem;
+    gap: 10rem;
     
 } 
 
 #year-dropdown {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
+    text-align: center;
     width: 90%;
-    height: 2.5rem;
-    border-radius: 0.4rem;
-    margin-top: 5rem;
+    height: 3rem;
+    border-radius: 0.9rem;
+    margin-top: 1rem;
+    background-color: #EDEDED;
 }
 
 #year-btns {
@@ -353,16 +352,14 @@ i {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1rem;
-    /*height: 60%;*/
     width: 100%;
+    background-color: #EDEDED;
     height: auto;
-    font-family: 'Roboto', sans-serif;
     color: white;
-    margin-top: 1rem;
-    min-height: 20%;
+    margin-top: 2rem;
+    min-height: 15%;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     box-sizing: border-box;
     font-size: 1.3rem;
     padding: 0.5rem;
@@ -371,21 +368,29 @@ i {
 .option-btn {
     width: 100%;
     border-radius: 0.3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     background-color: white;
+    color: black;
     text-transform: none;
     border: 0.1rem solid rgba(86, 165, 235, 0.25);
     text-align: left;
     font-size: 1.2rem;
     justify-content: left;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, width 0.3s;
 }
 
-.option-btn::before{
+.option-btn:active {
+    background-color: black;
+    color: white;
+    width: 105%;
+}
+
+/*.option-btn::before{
     content: attr(data-prefix);
     font-weight: bold;
-}
+} */
 
 #question-text{
     background-color: #E6ECF0;
@@ -454,7 +459,6 @@ i {
 /* Display questions and answeres at the end of the test*/
 #review-section {
     display: flex;
-    flex-direction: column;
     overflow-y: auto;
     background-color: #E6ECF0;
     font-family: 'Roboto', sans-serif;
@@ -468,13 +472,14 @@ i {
 .notification-container {
     position: fixed;
     top: 1rem;
-    right: 1rem;
-    width: 100%;
+    right: 8rem;
+    left: 8rem;
+    width: 60%;
     z-index: 1001;
 }
 
 .notification {
-    padding: 15px, 20px;
+    padding: 15px 20px;
     margin-bottom: 15px;
     border-radius: 5px; 
     color: #fff;
@@ -496,7 +501,7 @@ i {
     background-color: orange;
 }
 .notification.info{
-    background-color: yellow;
+    background-color: black;
 }
 
 /*media queries */
