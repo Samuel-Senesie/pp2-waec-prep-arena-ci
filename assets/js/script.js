@@ -355,7 +355,7 @@ const questionBank = {
 };
 
 // Global variables
-let userName;
+/*let usernameInput;*/
 let leaderboardData = []; // store leaderboard entries
 let questions = [];
 let currentQuestionIndex = 0;
@@ -364,8 +364,8 @@ let userAnswers = []; //string to store user's answers for review
 let timeLeft = 60;
 let isPaused = false;
 let selectedLevel = '';
-let selectedSubject = '';
-let selectedYear = '';
+/*let selectedSubject = '';
+let selectedYear = '';*/
 let scoreBoard = {
     correct: 0,
     wrong: 0,
@@ -383,7 +383,7 @@ if (savedLeaderboardData) {
 document.addEventListener('DOMContentLoaded', () => {
     const startGame = document.getElementById('start-game');
     const usernameInput = document.getElementById('username-input');
-    const usernameContainer = document.getElementById('username-container');
+    /*const usernameContainer = document.getElementById('username-container');*/
     const leaderboardButton = document.getElementById('leaderboard-btn');
     const leaderboardSection = document.getElementById('leaderboard-section');
     const clearLeaderboard = document.getElementById('clear-leaderboard');
@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sssLevel = document.getElementById('sss-level');
     const subjectButtons = document.querySelectorAll('.subject-btn');
     const backToSubjects = document.getElementById('back-to-subjects');
-    const selectedSubjectText = document.getElementById('selected-subject');
+    /*const selectedSubjectText = document.getElementById('selected-subject');*/
     const startTest = document.getElementById('start-test');
     const subjectSelectionJss = document.getElementById('subject-selection-jss');
     const subjectSelectionSss = document.getElementById('subject-selection-sss');
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionContainer = document.getElementById('question-container');
     const optionsContainer = document.getElementById('options-container');
     const timerBar = document.getElementById('timer-bar');
-    const results = document.getElementById('results');
+    /*const results = document.getElementById('results'); */
     const nextQuestion = document.getElementById('next-question');
     const pause = document.getElementById('pause');
     const resume = document.getElementById('resume');
@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
         jssLevel.addEventListener('click', () => {
             if (validateUsername()) {
                 selectedLevel = 'jss';
-                localStorage.setItem('selectedLevel', selectedLevel) /*New*/
+                localStorage.setItem('selectedLevel', selectedLevel); /*New*/
                 levelSelection.style.display = 'none';
                 document.getElementById('subject-selection-jss').style.display = 'flex';
             }
@@ -569,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
         // Save the valid username to localStorage    
-        localStorage.setItem('username', usernameInputValue)
+        localStorage.setItem('username', usernameInputValue);
         return true;
     } 
 
@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedSubject = event.target.closest('.subject-btn').dataset.subject;
             localStorage.setItem('selectedSubject', selectedSubject);
 
-            console.log(`Set Subject to localStorage: ${selectedSubject}`)
+            console.log(`Set Subject to localStorage: ${selectedSubject}`);
             console.log(`Stored in localStorage: ${localStorage.getItem('selectedSubject')}`);
 
             subjectSelectionJss.style.display = 'none';
@@ -626,9 +626,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const subject = localStorage.getItem('selectedSubject');
                     const year = yearDropdown.value;
 
-                    console.log(`Selected Level: ${level}`)
-                    console.log(`Selected Subject: ${subject}`)
-                    console.log(`Selected Year: ${year}`)
+                    console.log(`Selected Level: ${level}`);
+                    console.log(`Selected Subject: ${subject}`);
+                    console.log(`Selected Year: ${year}`);
 
                     if (level && subject && year) {
                         questions = questionBank[level][subject][year];
@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 alert('Please select year to proceed.');
             }
-        })
+        });
     }
 
 
@@ -955,7 +955,7 @@ document.addEventListener('DOMContentLoaded', () => {
             reviewSection.innerHTML += questionHTML;
         });
         const buttonContainerHTML = `<div class="button-container"><button id="restart-test">Restart Test</button></div>`;
-        reviewSection.innerHTML += buttonContainerHTML
+        reviewSection.innerHTML += buttonContainerHTML;
 
         /*reviewSection.innerHTML += '<button id="restart-test">Restart Test</button>';*/
         document.getElementById('restart-test').addEventListener('click', () => {

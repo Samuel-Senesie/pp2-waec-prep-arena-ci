@@ -22,11 +22,13 @@ body {
 
 #home-page {
     margin-top: 1.25rem;
+    
 }
 
 
 h1 {
-    color: #fff;
+    color: #e0e0e0;
+    font-weight: bold;
 }
 
 h2 {
