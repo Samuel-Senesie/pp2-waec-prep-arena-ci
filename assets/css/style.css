@@ -27,8 +27,9 @@ body {
 
 
 h1 {
-    color: #e0e0e0;
+    color: #cccccc;
     font-weight: bold;
+    background-color: #003366;
 }
 
 h2 {
