@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionPrefixes = ['A', 'B', 'C', 'D'];
         const optionButtons = optionsContainer.querySelectorAll('.option-btn');
         optionButtons.forEach((btn, index) => {
-            btn.innerHTML = `<strong>${optionPrefixes[index]}.</strong> ${currentQuestion.options[index]}`;
+            btn.innerHTML = `<strong><span class="option-prefix">${optionPrefixes[index]}. </span></strong> ${currentQuestion.options[index]}`;
             btn.onclick = () => {
                 userAnswers[currentQuestionIndex] = currentQuestion.options[index];
                 checkAnswer(currentQuestion.options[index]);

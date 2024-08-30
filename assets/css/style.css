@@ -366,6 +366,8 @@ i {
 }
 
 .option-btn {
+    display: flex;
+    align-items: center;
     width: 100%;
     border-radius: 0.3rem;
     margin-left: 0;
@@ -413,8 +415,15 @@ i {
 }
 
 .option-prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: black;
-    background-color: aqua;
+    background-color: #66ccff;
+    font-weight: bold;
+    display: inline-block;
+    height: 100%;
+    margin-right: 0.3rem;
 }
 
 #timer-bar {
