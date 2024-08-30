@@ -894,8 +894,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             reviewSection.innerHTML += questionHTML;
         });
+        const buttonContainerHTML = `<div class="button-container"><button id="restart-test">Restart Test</button></div>`;
+        reviewSection.innerHTML += buttonContainerHTML
 
-        reviewSection.innerHTML += '<button id="restart-test">Restart Test</button>';
+        /*reviewSection.innerHTML += '<button id="restart-test">Restart Test</button>';*/
         document.getElementById('restart-test').addEventListener('click', () => {
             location.reload();
         });
