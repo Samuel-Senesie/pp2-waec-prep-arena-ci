@@ -42,8 +42,11 @@ A leaderboard displays each user's total score at the end of the test.
   * [CSS](#css)
   * [JavaScript](#javascripts)
 
+* [Debugging](#debugging)
+  * [Fixed Bug](#fixed-bugs)
+  * [Bugs Not Fixed](#bugs-not-fixed)
+
 * [Testing](#testing)
-  * [User Stories Testing](#user-stories-testing)
   * [Lighthouse Testing](#lighthouse-testing)
   * [Responsive Testing](#responsive-testing)
   * [Accessibility Testing](#accessibility-testing)
@@ -198,7 +201,7 @@ The start button on the start page is only functional after the user has selecte
 #### Test Review Section
 At the end of the test, the review section will display all the questions, showing the user’s selected answers and the correct answers. A restart button is located at the bottom of the page, which users can use to navigate back to the level selection area and restart the test.
 
-![Test Review Section](assets/images/features/review-section.png)
+![Test Review Section](assets/images/features/test-review-display.png)
 
 #### Leaderboard
 
@@ -268,12 +271,113 @@ Solution: The comma was removed, resolving the issue.
 * Error 2: .notification (line 477): Value error due to an incorrect operator (0, auto).
 Solution: The comma was removed, resolving the issue.
 
-[Error Message](assets/images/validation/css-error-message.png)
+![Error Message](assets/images/validation/css-error-message.png)
+
 ![Correction](assets/images/validation/css-error-correction.png)
 
+---
+### JavaScript Validation
+The JavaScript code was validated using the JSHint tool. During testing, JSHint issued eight warnings for 'missing semicolons' and six warnings for 'unused variables,' as shown in the attached image. To resolve these issues, semicolons were added where needed, and the unused variables were commented out, clearing all warnings.
+
+![JavaScrip Validation Error](assets/images/validation/jshint-validation-error.png)
+
+![JavaScript Validation Pass Result](assets/images/validation/jshint-validation.png)
 
 
 
+---
+## Debugging
+### Fixed bugs
+The deployed website was tested for bugs, and several console errors were identified and corrected. Below are the details of each issue and its resolution, accompanied by the attached images.
+
+1. **Start Test Function Error**
+* **Error Message:** script.js:621 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at HTMLDocument.`<anonymous>` (script.js:621:15)
+
+* **Solution:** The script for the **startTest**  function was wrapped in an event listener, which resolved the error.
+
+![Start Test Funtion Console Error](assets/images/fixed-bugs/start-test-bug.png)
+
+2. **Next Question Button Error**
+* **Error Message:** script.js:817 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at HTMLDocument.`<anonymous>` (script.js:817:18)
+
+* **Solution:** The script for the **‘Next Question’** button function was wrapped in an event listener, successfully resolving the error.
+![Next Question Button Console Error](assets/images/fixed-bugs/next-question-button-bug.png)
+
+3. **Pause Button Error**
+* **Error Message:** script.js:852 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at HTMLDocument.`<anonymous>` (script.js:852:11)
+
+* **Solution:** The script for the **‘Pause’** button function was wrapped in an event listener, which cleared the error.
+
+![Pause Button Console Error](assets/images/fixed-bugs/pause-button-bug.png)
+
+
+3. **Resume Button Error**
+* **Error Message:** script.js:869 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at HTMLDocument.`<anonymous>` (script.js:869:12)
+
+* **Solution:** The script for the **‘Resume’** button function was wrapped in an event listener, resolving the error.
+
+![Pause Button Console Error](assets/images/fixed-bugs/resume-test-button.png)
+
+---
+
+### Bugs Not Fixed
+Currently, there are no unresolved or unidentified bugs.
+
+---
+
+## Testing
+### Lighthouse Testing
+Lighthouse testing was performed using Chrome DevTools to evaluate the website against four key criteria: Performance, Accessibility, Best Practices, and SEO. The Lighthouse test returned excellent results, with scores of 100 for Accessibility, Best Practices, and SEO, and a score of 99 for Performance on both the index and game pages. Please see the images of the Lighthouse test report for both pages below.
+
+![Home Page Lighthouse Testing Result](assets/images/lighthouse-testing/lighthouse-test-result-homepage.png)
+![Game Page Lighthouse Testing Result](assets/images/lighthouse-testing/lighthouse-test-game-page.png)
+
+---
+### Accessibility Testing
+The web accessibility evaluation tool [WebAIM](https://wave.webaim.org/) was used to assess the accessibility features of the website. The test identified a contrast error, as shown in the image below. The issue was due to very low contrast (1.32:1) between the background color (#E0E0E0) and the H1 text color (#ffffff) on the review page. This error was resolved by changing the text color from #ffffff (white) to #cccccc (light grey) and applying a #003366 background color to the H1 element, improving the contrast ratio to 8.59:1.
+
+![Accessibilit Test Error](assets/images/accessibility-test/accessibility-test-error.png)
+
+![Accessibility Test Erro1](assets/images/accessibility-test/accessibility-test-error1.png)
+
+![Accessibility Test Good Result](assets/images/accessibility-test/accessibility-test-result.png)
+
+---
+
+### Manual Testing
+A comprehensive manual testing process was conducted to verify that the various features of the website function as intended. Below is a breakdown of the test results:
+
+| Feature | Expectation | Result | Proof(s) |
+| ------- | ----------- | ------ | -------- |
+| Homepage | The homepage should display the quiz name, logo, and two buttons: 'About Game' and 'Let’s Go!', allowing users to navigate to the quiz information and game page, respectively. | The homepage correctly displayed the 'Let’s Go!' and 'About Game' buttons, along with a background image featuring the quiz name and logo. | ![Homepage](assets/images/manual-testing/homepage.png) |
+| About Game Button ![About Game Button](assets/images/manual-testing/about-button.png) | Clicking this button should open a popup window displaying 'Instructions', 'Game Rules', and a 'Close' button to return to the homepage. | The 'About Game' button functioned as expected, opening the popup window with the 'Instructions', 'Game Rules', and 'Close' buttons. | ![About Game Popup](assets/images/manual-testing/about-game-popup.png) |
+| Instructions Button ![Instructions Button](assets/images/manual-testing/instructions-button.png) | Clicking the 'Instructions' button should show quiz instructions in a popup window with a 'Back' button to navigate back to the 'About Game' popup. | The 'Instructions' button worked as expected, displaying the instructions in a popup window with a 'Back' button. | ![Instructions Popup](assets/images/manual-testing/instructions-popup.png) |
+| Game Rules Button ![Game Rules Button](assets/images/manual-testing/rules-button.png) | Clicking this button should display the test rules in a popup window, along with a 'Back' button to return to the 'About Game' popup. | The 'Game Rules' button functioned as intended, showing a list of rules and a 'Back' button. | ![Game Rules Popup](assets/images/manual-testing/game-rules-popup.png) |
+| Back Button (About Game) ![Back Button](assets/images/manual-testing/back-button.png) | This button should return the user to the 'About Game' popup window when clicked. | The 'Back' button successfully navigated back to the 'About Game' popup window. | ![Back Button](assets/images/manual-testing/about-game-popup.png) |
+| Close Button ![Close Button](assets/images/manual-testing/close-button.png) | Clicking this button should close the 'About Game' popup window and display the homepage. | The 'Close' button functioned as expected, closing the popup and showing the homepage. | ![Homepage](assets/images/manual-testing/homepage.png) |
+| Let’s Go Button ![Let's Go Button](assets/images/manual-testing/lets-go-button.png) | This button should navigate the user to the game page, displaying the username input field, leaderboard section, and level selection options. | The 'Let’s Go' button worked as expected, navigating to the game page with the username input, leaderboard, and level selection sections. | ![Level Selection Display](assets/images/manual-testing/level-selection-display.png) |
+| Username Input ![Username Input](assets/images/manual-testing/username-input.png) | The username input field should allow users to create a username and save their level, subject selection, year, and score under it. | The username input functioned correctly, enabling users to create a username and save their score. | No image |
+| Leaderboard Button ![Leaderboard Button](assets/images/manual-testing/leaderboard-button.png) | Clicking this button should open a leaderboard section showing scores, with options to clear/reset the score and a 'Back' button to return to the level selection page. | The leaderboard button operated as expected, opening the leaderboard with displayed scores, 'clear', and 'back' buttons. | ![Leaderboard Display](assets/images/manual-testing/leaderboard-display.png) |
+| Level Selection Section | This section should provide buttons for selecting Junior (JSS) and Senior (SSS) levels. | The level selection section displayed as expected, with buttons for both Junior and Senior levels. | ![Level Selection Display](assets/images/manual-testing/level-selection-display.png) |
+| Junior (JSS) Level Selection Button ![Junior Level Selection Button](assets/images/manual-testing/junior-level-selection-button.png) | Clicking this button should display the subjects under the JSS level. | The Junior (JSS) level selection button functioned as expected, displaying the JSS level subjects dynamically. | ![Junior Level Subjects](assets/images/manual-testing/junior-level-subjects.png) |
+| Senior (SSS) Level Selection Button ![Senior Level Selection Button](assets/images/manual-testing/senior-level-selection.png) | This button should display the SSS level subjects when clicked. | The Senior (SSS) level selection button worked as intended, displaying the SSS level subjects. | ![Senior Level Subjects](assets/images/manual-testing/senior-level-subjects.png) |
+| Subject Selection Buttons ![Subject Selection Button](assets/images/manual-testing/subject-selection-button.png) | After selecting a username and level, clicking any subject button should navigate the user to the year selection and start-test sections. | All subject buttons responded as expected, taking users to the year selection and start-test sections dynamically. | ![Start Test Section](assets/images/manual-testing/level-selection-display.png) |
+| Year Selection Section | This section should show a year selection dropdown, along with 'Start Test' and 'Back' buttons. | The year selection section was displayed correctly, including the dropdown, 'Start Test', and 'Back' buttons. | ![Year Selection Display](assets/images/manual-testing/year-selection-display.png) |
+| Year Selection Dropdown ![Year Selection Dropdown](assets/images/manual-testing/year-dropdown.png) | Users should find a dropdown to select a past paper year. Currently, only 2019 is available in the question bank. | The year selection dropdown was displayed as expected, allowing users to select 2019. | ![Year display](assets/images/manual-testing/year-display.png) |
+| Start-Test Button ![Start Test button](assets/images/manual-testing/start-test-button.png) | After entering a username and selecting a level, subject, and year, clicking this button should display the test section with questions. | The 'Start-Test' button functioned as expected, displaying the test section for the selected level, subject, and year. | ![Test Section](assets/images/manual-testing/test-section-display.png) |
+| Questions Display Section | This section should show the test question, four answer options (A to D), 'Next', 'Start', and 'Pause' buttons, along with a progress (Timer) bar. | The section displayed all the expected features correctly. | ![TEST section Display](assets/images/manual-testing/test-section-display.png) |
+| Next Button ![Next Button](assets/images/manual-testing/next-button.png) | Clicking this button should skip to the next question, with an in-page notification saying 'Try again later!'. | The 'Next' button operated as expected, allowing users to skip questions, with the notification appearing as intended. | ![Next Button Active](assets/images/manual-testing/next.png) |
+| Pause Button ![Pause Button](assets/images/manual-testing/pause-button.png) | Clicking this button should pause the test, hide the question and answer options, stop the timer, and display a notification saying 'You paused the Test!'. | The 'Pause' button functioned as expected, pausing the test and displaying the notification. | ![Pause Button Active](assets/images/manual-testing/paused.png) |
+| Resume Button ![Resume Button](assets/images/manual-testing/resume-button.png) | This button should continue the test, with questions and answer options reappearing, the timer resuming, and a notification saying 'You resumed the test!'. | The 'Resume' button worked as intended, resuming the test and displaying the notification. | ![Resume Button Active](assets/images/manual-testing/resumed.png) |
+| Timer Bar ![Timer Bar](assets/images/manual-testing/timerbar.png) | A timer bar should be present below the answer options, changing color based on time left: green at 60 seconds, orange at 30 seconds, and red at 10 seconds. The timer should pause and resume as per the 'Pause' and 'Resume' buttons. | The timer bar functioned as expected, changing colors according to the remaining time and pausing/resuming correctly. | ![Timber Bar at 30sec](assets/images/manual-testing/timerbar-30sec.png) |
+| Score Display Section | This section should track and display scores for correct, incorrect, unanswered, and skipped questions, as well as the remaining number of questions. | The score display section worked as expected, accurately tracking and displaying scores and question counts. | ![Score Display Section](assets/images/manual-testing/score-display-section.png) |
+| Test Review Section | After completing the test, a review section should display the subject name, year, all questions, selected answers, correct answers, and any unanswered/skipped questions. A 'Restart' button should be at the bottom. | The test review section functioned as expected, showing all the required information and including the 'Restart' button. | ![Test Review Display](assets/images/manual-testing/test-review-section.png) |
+|Restart Button ![Restart Button](assets/images/manual-testing/restart-button.png) | Clicking this button should take the user back to the level selection section to restart the test. | The 'Restart' button worked as expected, navigating back to the level selection section. | ![Level Selection Display](assets/images/manual-testing/level-selection-display.png) |
+| Leaderboard Display | After clicking the leaderboard button, a section should appear showing a table with the username, level, subject, and score percentage. There should also be 'Clear' and 'Back' buttons. | The leaderboard display functioned as expected, showing the table with the required information and both 'Clear' and 'Back' buttons working as intended. | ![Leaderboard Display](assets/images/manual-testing/leaderboard-results.png) |
+| Clear Button ![Clear Button](assets/images/manual-testing/clear-button.png) | When clicked, this button should clear all data in the leaderboard. | The feature functioned as expected, successfully clearing all the data in the leaderboard upon being clicked. | ![Cleared Leaderboard](assets/images/manual-testing/leaderboard-cleared.png) |
+| Back Button ![Back Button](assets/images/manual-testing/back-button.png) | This button should navigate the user back to the level selection section when clicked. | The feature responded as intended, taking the user back to the level selection section. | ![Level Selection Display](assets/images/manual-testing/level-selection-display.png) |
+
+---
 
 
 
