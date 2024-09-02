@@ -427,11 +427,17 @@ A comprehensive manual testing process was conducted to verify that the various 
 
 * Fonts: Sourced and imported from Google Fonts.
 * Icons: Sourced from Font Awesome.
-* * Logo and Background Image: Created using Canva.
+* Logo and Background Image: Created using Canva.
 * Color Palette: Generated using the Coolors tool.
 * JavaScript Code for Font Awesome Kit: Imported from Font Awesome.
 * ChatGPT: Utilized to generate questions for the question bank (excluding JSS level English questions), edit the content of the README document, debug JavaScript code, and serve as a reference and learning guide for the project.
 * Website Inspiration and Design: Based on the Love Maths Walkthrough Project from the Code Institute's Full Stack Software Development Diploma Course
+
+---
+## Acknowledgements
+I would like to express my gratitude to my mentor, Akshat Gar, and my cohort facilitator, Kay Welfare, for their invaluable guidance and support. I also appreciate the honest feedback and direction provided by my classmates.
+
+---
 
 
 
