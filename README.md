@@ -49,6 +49,8 @@ A leaderboard displays each user's total score at the end of the test.
 * [Testing](#testing)
   * [Lighthouse Testing](#lighthouse-testing)
   * [Responsive Testing](#responsive-testing)
+    * [Browser Testing](#browser-testing)
+    * [Device Testing](#device-testing)
   * [Accessibility Testing](#accessibility-testing)
   * [Mannual Testing](#manual-testing)
 
@@ -333,6 +335,30 @@ Lighthouse testing was performed using Chrome DevTools to evaluate the website a
 ![Game Page Lighthouse Testing Result](assets/images/lighthouse-testing/lighthouse-test-game-page.png)
 
 ---
+## Responsive Testing
+### Browser Testing
+To evaluate the website's performance across different browsers, the deployed site was tested on Chrome, Safari, and Edge. The website loaded successfully on all three browsers.
+
+
+| Browser | Status | Proof |
+| ------- | ------ | ----- |
+ Microsoft Edge | Successful | ![Edge Browser Home Page](assets/images/browser-testing/homepage.png) ![Edge Browser About Game Popup](assets/images/browser-testing/about-game-popup.png) ![Edge Browser Level Selection](assets/images/browser-testing/level-selection.png) ![Edge Browser Questions Display](assets/images/browser-testing/subject-display.png) ![Edge Browser Review Section](assets/images/browser-testing/review-section.png) |
+ | Safari | Successful | ![Safari Home Page](assets/images/browser-testing/safari-homepage.png) ![Safari About Game Popup](assets/images/browser-testing/safari-about-game-popup.png) ![Safari Level Selection](assets/images/browser-testing/safari-level-selection.png) ![Safari Browser Leaderboard](assets/images/browser-testing/safari-leaderboard.png) ![Safari Browser Year Selection](assets/images/browser-testing/safari-year-selection.png) ![Safari Browser Questions Display](assets/images/browser-testing/safari-questions-display.png) |
+| Google Chrome Browser | Successful | ![Chrome Browser Homepage](assets/images/browser-testing/chrome-hompage.png) ![Chrome Browser Level Selection](assets/images/browser-testing/chrome-level-selection.png) ![Chrome Browser Subject Selection Display](assets/images/browser-testing/chrome-subject-selection.png) ![Chrome Browser Questions Display](assets/images/browser-testing/chrome-subject-display.png) ![Chrome Browser Review Section](assets/images/browser-testing/chrome-review-section.png) |
+
+---
+### Devise Testing
+To assess the website's performance across various devices, the deployed site was tested on multiple screen sizes. The website loaded and displayed correctly on the following devices and screen sizes:
+
+| Device Name | Device/Breakpoint | Image |
+| ----------- | ----------------- | ----- |
+| Samsung Galaxy S9 | Mobile (360x740) | ![Samsung Galaxy S9 Home Page](assets/images/devise-testing/samsung-galaxy-s9-homepage.png) ![Samsung Galaxy S9 Level Selection](assets/images/devise-testing/samsung-galaxy-s9-level-selection.png) ![Samsung Galayx S9 Subject Selection](assets/images/devise-testing/samsung-galaxy-s9-subject-selection.png) ![Samsung Galaxy S9 Year Selection](assets/images/devise-testing/samsung-galaxy-s9-year-selection.png) |
+| Apple iPhone8 | Mobile(375x667) | ![Apple iPhone8 Home Page](assets/images/devise-testing/iphone8-homepage.png) ![Apple iPhone8 About Game Popup](assets/images/devise-testing/iphone8-about-game-popup.png) ![Apple iPhone Level Selection](assets/images/devise-testing/iphone8-level-selection.png) ![Apple iPhone Pased Test](assets/images/devise-testing/iphone8-paused-test.png) |
+| Nexus 5X | Mobile(411x731) | ![Nexus 5S Home Page](assets/images/devise-testing/nexus-5x-homepage.png) ![Nexus 5X Level Selection](assets/images/devise-testing/nexus-5x-level-selection.png) ![Nexus 5X Subject Selection](assets/images/devise-testing/nexus-5x-button-selection.png) ![Nexus 5X Leaderboard](assets/images/devise-testing/nexus-5x-leaderboard.png) |
+| Apple iPad Mini | Tablet(768x1024) | ![Apple iPad Mini Hompage](assets/images/devise-testing/ipad-mini-homepage.png) ![Apple iPad Mini Level Selection](assets/images/devise-testing/ipad-mini-level-selection.png) |
+
+---
+
 ### Accessibility Testing
 The web accessibility evaluation tool [WebAIM](https://wave.webaim.org/) was used to assess the accessibility features of the website. The test identified a contrast error, as shown in the image below. The issue was due to very low contrast (1.32:1) between the background color (#E0E0E0) and the H1 text color (#ffffff) on the review page. This error was resolved by changing the text color from #ffffff (white) to #cccccc (light grey) and applying a #003366 background color to the H1 element, improving the contrast ratio to 8.59:1.
 
@@ -380,17 +406,17 @@ A comprehensive manual testing process was conducted to verify that the various 
 ---
 
 ## Technologies Used
-*	GitPod Enterprise: Used for writing HTML, CSS  and JavaScript codes. HTML5 was used to strcture the content of the website, while CSS3 provided styling to enhance the user experience and JavaScript to make the website interactive.
-*	GitHub: Used for hosting and deploying the website.
+*	[GitPod Enterprise](https://www.gitpod.io/enterprise): Used for writing HTML, CSS  and JavaScript codes. HTML5 was used to strcture the content of the website, while CSS3 provided styling to enhance the user experience and JavaScript to make the website interactive.
+*	[GitHub:](https://github.com/) Used for hosting and deploying the website.
 *	GitBash: Used to push new code to GitHub repository.
-*	WSC Validators: HTML and CSS  JSHint validators were used for code validation
-*	WebAIM Was used for accessibilit testing
-*	Responsive design Checker, Website Responsive Tessting tool were used for responsive testing.
+*	WSC Validators: [HTML](https://validator.w3.org) and [CSS](https://jigsaw.w3.org)  [JSHint](https://jshint.com/) validators were used for code validation
+*	[WebAIM](https://webaim.org/) Was used for accessibilit testing
+*	[Responsive design Checker](https://responsivedesignchecker.com/), [Website Responsive Tessting tool](https://responsivetesttool.com/) were used for responsive testing.
 *	Chrome DevTools: Used for performing Lighthouse testing.
-*	Balsamiq: Used to create the wireframes for the website.
-*	Canva was used to create the logo and background-image
-*	Cooler.co was used to generate the colour palette.
-*	ChatGPT: Assisted with editing the text contents for the website and this README document.
+*	[Balsamiq:](https://balsamiq.com/wireframes/) Used to create the wireframes for the website.
+*	[Canva](https://www.canva.com/) was used to create the logo and background-image
+*	[Coolors](https://coolors.co/) was used to generate the colour palette.
+*	[ChatGPT:](https://openai.com/chatgpt/) Assisted with editing the text contents for the website and this README document.
 
 
 
