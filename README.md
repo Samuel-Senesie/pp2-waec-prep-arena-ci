@@ -379,6 +379,18 @@ A comprehensive manual testing process was conducted to verify that the various 
 
 ---
 
+## Technologies Used
+*	GitPod Enterprise: Used for writing HTML, CSS  and JavaScript codes. HTML5 was used to strcture the content of the website, while CSS3 provided styling to enhance the user experience and JavaScript to make the website interactive.
+*	GitHub: Used for hosting and deploying the website.
+*	GitBash: Used to push new code to GitHub repository.
+*	WSC Validators: HTML and CSS  JSHint validators were used for code validation
+*	WebAIM Was used for accessibilit testing
+*	Responsive design Checker, Website Responsive Tessting tool were used for responsive testing.
+*	Chrome DevTools: Used for performing Lighthouse testing.
+*	Balsamiq: Used to create the wireframes for the website.
+*	Canva was used to create the logo and background-image
+*	Cooler.co was used to generate the colour palette.
+*	ChatGPT: Assisted with editing the text contents for the website and this README document.
 
 
 
