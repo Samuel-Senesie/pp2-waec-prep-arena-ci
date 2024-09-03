@@ -49,7 +49,7 @@ h2 {
     transform: translate(-50%);
 }
 
-
+/* Generic style for buttons */
 button {
     width: 13.75rem;
     height: 3.125rem;

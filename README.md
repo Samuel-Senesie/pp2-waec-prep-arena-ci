@@ -62,6 +62,10 @@ A leaderboard displays each user's total score at the end of the test.
 
 * [Technologies Used](#technologies-used)
 
+* [Credits](#credits)
+
+* [Acknowledgements](#acknowledgements)
+
 ---
 
 ## User Experience
@@ -437,18 +441,21 @@ A comprehensive manual testing process was conducted to verify that the various 
 *	[Coolors](https://coolors.co/) was used to generate the colour palette.
 *	[ChatGPT:](https://openai.com/chatgpt/) Assisted with editing the text contents for the website and this README document.
 
-
+---
 
 
 ## Credits
 
-* The popup menu was learnt ad adapted from the YouTube Tutorial of [Codingflag](https://youtu.be/iE_6pQ3RlZU?si=6_qy3F1wWourONax)
-
-* Fonts: Sourced and imported from Google Fonts.
-* Icons: Sourced from Font Awesome.
-* Logo and Background Image: Created using Canva.
-* Color Palette: Generated using the Coolors tool.
-* JavaScript Code for Font Awesome Kit: Imported from Font Awesome.
+* The popup menu was learned and adapted from the  [Codingflag](https://youtu.be/iE_6pQ3RlZU?si=6_qy3F1wWourONax)
+* Fonts: Sourced and imported from [Google Fonts](https://fonts.google.com/).
+* Icons: Sourced from [Font Awesome](https://fontawesome.com/).
+* Logo and Background Image: Created using [Canva](https://www.canva.com/).
+* Color Palette: Generated using the [Coolors tool](https://coolors.co/).
+* JavaScript Code for Font Awesome Kit: Imported from [Font Awesome](https://fontawesome.com/).
+* The JSS Level Language Arts questions were sourced from the [Mickinet Systems platform](https://mickinetsystems.com/bece-past-questions/).
+* [James Q Quick's](https://www.youtube.com/@JamesQQuick) YouTube tutorial titled "Build a Quiz App with HTML, CSS, and JavaScript" provided valuable insights that helped shape the design and functionality of this project.
+* Special thanks to Sean from the Code Institute’s Tutor Support team for assistance in resolving the 404 error page issue.
+* Thanks to [TpLEARN](https://app.tplearn.edu.sl/) for the inspiration, as their work and platform significantly influenced the development of this project.
 * ChatGPT: Utilized to generate questions for the question bank (excluding JSS level English questions), edit the content of the README document, debug JavaScript code, and serve as a reference and learning guide for the project.
 * Website Inspiration and Design: Based on the Love Maths Walkthrough Project from the Code Institute's Full Stack Software Development Diploma Course
 
