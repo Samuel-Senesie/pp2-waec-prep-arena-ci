@@ -210,6 +210,15 @@ At the end of the test, the review section will display all the questions, showi
 At the end of the test, the user’s name, level, subject, and score (in percentage) are displayed on the leaderboard.
 ![Leaderboard](assets/images/features/leaderboard-section.png)
 
+#### 404 Error Page
+
+When a "Page Not Found" error occurs, users will be redirected to a custom 404 error page. This page will feature the company logo, a clear error message, and a link to guide users back to the homepage.
+
+![404 Error Page](assets/images/features/404-error-page.png)
+
+
+---
+
 ### Future Features
 * A signup and login option for users.
 * Hints to help users select the correct answers.
