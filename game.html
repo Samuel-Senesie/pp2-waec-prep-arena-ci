@@ -39,7 +39,7 @@
             <button id="sss-level" class="level-btn" data-level="sss"><i class="fa-solid fa-graduation-cap"></i>Senior(SSS)</button>
             <button id="back-to-home-page"><i class="fa-solid fa-rotate-left"></i>Back</button>
         </div>
-        
+        <!--Leaderboard Display section-->
         <div id="leaderboard-section" style="display: none;">
             <h2>Leaderboard</h2>
             <table id="leaderboard-table">
@@ -101,23 +101,28 @@
 
         <!--Display test questions-->
         <div id="test-section" style="display: none;">
+            <!--this div holds and displays the question -->
             <div id="question-container">
                 <div id="question-text">
                     <p id="question"></p>
                 </div> 
             </div>
+            <!--Answer options-->
             <div id="options-container">
                 <button class="option-btn">A</button>
                 <button class="option-btn">B</button>
                 <button class="option-btn">C</button>
                 <button class="option-btn">D</button>
             </div>
+            <!--Timer bar-->
             <div id="timer-bar" role="progressbar" aria-label="Time Remaining"></div>
+            <!--Test navigation buttons-->
             <div id="test-navigation">
                 <button id="next-question" aria-label="Next Question"><i class="fa-solid fa-forward"></i>Next</button>
                 <button id="pause" aria-label="Pause"><i class="fa-solid fa-circle-pause"></i>Pause</button>
                 <button id="resume"  aria-label="Resume"><i class="fa-solid fa-play"></i>Resume</button>
             </div>
+            <!--Scores display section-->
             <div id="score-board">
                 <p class="score"> Correct: <span id="correct-score">0</span></p>
                 <p class="score"> Wrong: <span id="wrong-score">0</span></p>
@@ -125,7 +130,9 @@
                 <p >Remaining: <span id="remaining-questions">60 </span></p>
             </div>
         </div>
+        <!--Inpage notifications-->
         <div id="notification-container" class="notification-container"></div>
+        <!--Test review display section-->
         <div id="review-section" style="display: none;">
             <h2>Review</h2>
         </div>

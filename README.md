@@ -275,6 +275,16 @@ To clone this repository, use the following steps:
 ![Game page](assets/images/validation/game%20page%20error%20correction.png)
 
 ---
+
+**404 Error Page**
+
+The code for the 404 error page has been successfully validated, as shown in the attached image, with no errors found.
+
+![404 Error Page Validation](assets/images/validation/404-page-validation.png)
+
+---
+
+
 ### CSS Validation
 When the code was run through the W3C CSS Validator, the test returned two error messages, as shown in the image. The following steps were taken to correct the issues:
 * Error 1: #leaderboard-section (line 129): Value error due to an incorrect operator (0, auto).
