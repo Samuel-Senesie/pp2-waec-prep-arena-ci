@@ -5,56 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>WAEC Prep Arena</title>
+
+    <style>
+        .error-page-container {
+            width: 80%;
+            max-width: 45rem;
+            border-radius: 1rem;
+            margin: auto;
+            margin-top: 10vh;
+            padding: 4rem;
+            text-align: center;
+            background-color: #ededed;
+    
+    
+        }
+        img {
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+    
+        .error-message{
+            font-size: 1.5rem;
+            color: #000000;
+        }
+    
+        #go-back-button {
+            font-size: 1.5rem;
+        }
+    
+        #go-back-button a {
+            display: inline-block;
+            color: #007bff;
+            margin-top: 2.5rem;
+            border-radius: 0.8rem;
+            text-decoration: none;
+            padding: 0.5rem 0.5rem;
+    
+        }
+    
+        #go-back-button a:hover {
+            background-color: #66ccff;
+            color: #fff;
+        }
+    
+    </style>
+
 </head>
-<style>
-    .error-page-container {
-        width: 80%;
-        max-width: 45rem;
-        border-radius: 1rem;
-        margin: auto;
-        margin-top: 10vh;
-        padding: 4rem;
-        text-align: center;
-        background-color: #ededed;
-
-
-    }
-    img {
-        height: 3.5rem;
-        width: 3.5rem;
-    }
-
-    .error-message{
-        font-size: 1.5rem;
-        color: #000000;
-    }
-
-    #go-back-button {
-        font-size: 1.5rem;
-    }
-
-    #go-back-button a {
-        display: inline-block;
-        color: #007bff;
-        margin-top: 2.5rem;
-        border-radius: 0.8rem;
-        text-decoration: none;
-        padding: 0.5rem 0.5rem;
-
-    }
-
-    #go-back-button a:hover {
-        background-color: #66ccff;
-        color: #fff;
-    }
-
-</style>
 
 <body>
     
     <div class="error-page-container">
         <div class="error-message">
+            <!--logo-->
             <img src="assets/images/logo-404-page.png" alt="logo">
+            <!--Error message-->
             <p>Sorry, the page cannot be found</p>
         </div>
         <div id="go-back-button">

@@ -355,7 +355,6 @@ const questionBank = {
 };
 
 // Global variables
-/*let usernameInput;*/
 let leaderboardData = []; // store leaderboard entries
 let questions = [];
 let currentQuestionIndex = 0;
@@ -364,8 +363,6 @@ let userAnswers = []; //string to store user's answers for review
 let timeLeft = 60;
 let isPaused = false;
 let selectedLevel = '';
-/*let selectedSubject = '';
-let selectedYear = '';*/
 let scoreBoard = {
     correct: 0,
     wrong: 0,
@@ -383,7 +380,6 @@ if (savedLeaderboardData) {
 document.addEventListener('DOMContentLoaded', () => {
     const startGame = document.getElementById('start-game');
     const usernameInput = document.getElementById('username-input');
-    /*const usernameContainer = document.getElementById('username-container');*/
     const leaderboardButton = document.getElementById('leaderboard-btn');
     const leaderboardSection = document.getElementById('leaderboard-section');
     const clearLeaderboard = document.getElementById('clear-leaderboard');
@@ -400,7 +396,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sssLevel = document.getElementById('sss-level');
     const subjectButtons = document.querySelectorAll('.subject-btn');
     const backToSubjects = document.getElementById('back-to-subjects');
-    /*const selectedSubjectText = document.getElementById('selected-subject');*/
     const startTest = document.getElementById('start-test');
     const subjectSelectionJss = document.getElementById('subject-selection-jss');
     const subjectSelectionSss = document.getElementById('subject-selection-sss');
@@ -412,7 +407,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionContainer = document.getElementById('question-container');
     const optionsContainer = document.getElementById('options-container');
     const timerBar = document.getElementById('timer-bar');
-    /*const results = document.getElementById('results'); */
     const nextQuestion = document.getElementById('next-question');
     const pause = document.getElementById('pause');
     const resume = document.getElementById('resume');
@@ -523,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
         jssLevel.addEventListener('click', () => {
             if (validateUsername()) {
                 selectedLevel = 'jss';
-                localStorage.setItem('selectedLevel', selectedLevel); /*New*/
+                localStorage.setItem('selectedLevel', selectedLevel);
                 levelSelection.style.display = 'none';
                 document.getElementById('subject-selection-jss').style.display = 'flex';
             }
@@ -536,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sssLevel.addEventListener('click', () => {
             if (validateUsername()) {
                 selectedLevel = 'sss';
-                localStorage.setItem('selectedLevel', selectedLevel); /* New */
+                localStorage.setItem('selectedLevel', selectedLevel);
                 levelSelection.style.display = 'none';
                 document.getElementById('subject-selection-sss').style.display = 'flex';
             }
@@ -599,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backToSubjects) {
         backToSubjects.addEventListener('click', () => {
             yearSelection.style.display = 'none';
-            if (localStorage.getItem('selectedLevel') === 'sss') /*(subjectSelectionJss.style.display === 'none')*/ {
+            if (localStorage.getItem('selectedLevel') === 'sss') {
                 subjectSelectionSss.style.display = 'flex';
             } else {
                 subjectSelectionJss.style.display = 'flex';
@@ -617,7 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Start test latest update
+    // Start test 
     if (startTest) {
         startTest.addEventListener('click', () => {
             if (yearDropdown && yearDropdown.value.trim() !== "") {
@@ -655,43 +649,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-
-    /*startTest.addEventListener('click', () => {
-        if (yearDropdown && yearDropdown.value.trim() !== "") {
-            if (validateUsername()) {
-                const level = localStorage.getItem('selectedLevel');
-                const subject = localStorage.getItem('selectedSubject');
-                const year = yearDropdown.value;
-
-                console.log(`Selected Level: ${level}`)
-                console.log(`Selected Subject: ${subject}`)
-                console.log(`Selected Year: ${year}`)
-
-                if (level && subject && year) {
-                    questions = questionBank[level][subject][year];
-
-                    if (questions && questions.length > 0) {
-                        scoreBoard.remaining = questions.length;
-                        userAnswers = [];
-                        currentQuestionIndex = 0;
-
-                        yearSelection.style.display = 'none';
-                        testSection.style.display = 'block';
-
-                        updateScoreDisplay();
-                        displayQuestion();
-                    } else {
-                        alert('No questions found')
-                    }
-                } else {
-                    alert ('Please ensure a level and subject is selected')
-                }
-            }
-        } else{
-            alert('Please select year to proceed.')
-        }
-    }); */
 
 
     // Update leaderboard section
@@ -814,22 +771,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load next question
-    /*nextQuestion.addEventListener('click', () => {
-        userAnswers[currentQuestionIndex] = 'Skipped';
-        checkAnswer('skipped');
-        scoreBoard.unanswered++;
-        scoreBoard.remaining--;
-        updateScoreDisplay();
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            displayQuestion();
-        } else {
-            showNotification('info', 'Test completed!');
-            clearInterval(timeInterval);
-            displayReview();
-        }
-    }); */
-
     if (nextQuestion) {
         nextQuestion.addEventListener('click', () => {
             userAnswers[currentQuestionIndex] = 'Skipped';
@@ -849,13 +790,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Pause test
-    /*pause.addEventListener('click', () => {
-        isPaused = true;
-        questionContainer.style.display = 'none';
-        optionsContainer.style.display = 'none';
-        showNotification('info', 'You paused test');
-    });*/
-
     if (pause) {
         pause.addEventListener('click', () => {
             isPaused = true;
@@ -866,13 +800,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Resume test
-    /*resume.addEventListener('click', () => {
-        isPaused = false;
-        questionContainer.style.display = 'block';
-        optionsContainer.style.display = 'flex';
-        showNotification('info', 'You resumed test.');
-    }); */
-
     if (resume) {
         resume.addEventListener('click', () => {
             isPaused = false;
@@ -916,10 +843,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    //Display review section
+    //Function to display the review section at the end of the test
     function displayReview() {
+        // Hide the test section and display the review section
         testSection.style.display = 'none';
         reviewSection.style.display = 'block';
+        // Clear the old content of the review section and display new content
         reviewSection.innerHTML = '';
 
         // Retrieve the selected subject and year from localStorage
@@ -938,22 +867,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const level = localStorage.getItem('selectedLevel');
         const subject = localStorage.getItem('selectedSubject');
 
+        // Add users score to Leaderboard
         addScoreToLeaderBoard(name, level, subject, score);
 
+        // Loop through question and display users answeres and the correct answers
         questions.forEach((question, index) => {
             const userAnswer = userAnswers[index] || 'Not Answered';
             const correctAnswer = question.correctAnswer;
 
+            // Assign colours to user's answeres - green for correct and red for wrong
             const answerColor = userAnswer === 'Not Answered' || userAnswer === 'Skipped' ? 'orange' : userAnswer === correctAnswer ? 'green' : 'red';
 
+            // Creat HTML for displaying the question, user's answers and correct answeres
             const questionHTML = `<div class="review-question">
             <p><strong>Q${index + 1}:</strong> ${question.question}</p>
             <p><strong>Your Answer:</strong> <span style="color: ${answerColor}">${userAnswer}</span></p>
             <p><strong>Correct Answer:</strong> <span style="color: green">${correctAnswer}</span></p>
             </div>`;
 
+            // Append the question's review HTML to the review section
             reviewSection.innerHTML += questionHTML;
         });
+        
         const buttonContainerHTML = `<div class="button-container"><button id="restart-test">Restart Test</button></div>`;
         reviewSection.innerHTML += buttonContainerHTML;
 
